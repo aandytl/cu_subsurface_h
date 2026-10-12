@@ -1,0 +1,36 @@
+SYSTEM = GoodLuck
+
+LCHARG = .F.    # generate  charge density or not
+LWAVE = .F.     #generate  wavecar or not
+NWRITE = 0
+
+NELM = 60  # electron step
+ALGO = Normal   #   caculation method of electron step. Fast  for easy convergence
+
+ISMEAR = 0     # 1,2 for metal 0,-5 for insultor and semiconductor,0 for all SYSTEM
+SIGMA = 0.1    # relate with ISMEAR  0.1 for metal and non-metal while 0.01 for small molecule
+ENCUT = 400
+
+LCLIMB = T # 使用ClNEB方法计算
+IMAGES = 5 # 插入的路径点数
+SPRING = -5 # 默认值
+IBRION = 1 # 1 or 3 1初始结构较好；3初始结构不太好
+# IOPT = 2 #VTST #是否使用VTST来计算，使用VTST时，POTIM = 0，IBRION = 3，对于VASP_6.4.3版本用不了之前的版本可以使用
+
+POTIM = 0.5
+EDIFFG = -0.05 # 离子步收敛标准
+EDIFF = 1E-5 # 电子步收敛标准
+NSW = 1000 # 离子步长
+
+IVDW = 11 # D3色散作用，范德华力
+
+LSOL = .TRUE.
+EB_K = 78.400000
+TAU = 0.000000
+LAMBDA_D_K = 3.000000
+
+# nelect to be added at the end
+NELECT = 397
+
+# potential脚本使用的时候需要开
+LVHAR = .TRUE. #计算静电势、功函数、费米能级、真空能级

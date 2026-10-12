@@ -1,0 +1,14 @@
+2026-10-10 18:14:31.947308: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+DeePMD-kit: Successfully load libcudart.so.12
+2026-10-10 18:14:50.008155: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/utils/batch_size.py:28: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices('GPU')` instead.
+You can use the environment variable DP_INFER_BATCH_SIZE tocontrol the inference batch size (nframes * natoms). The default value is 1024.
+H2 flags: []
+CO flags: ['Nominal gas bond has force >0.5 eV/A']
+Unvalidated candidate mu (eV): {'H': -2.4289053266019573, 'CO': -14.26841697359665}

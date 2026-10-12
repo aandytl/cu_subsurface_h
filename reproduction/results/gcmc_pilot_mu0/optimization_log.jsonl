@@ -1,0 +1,11 @@
+{"step": -1, "bfgs_steps": 2, "converged": true, "max_force_eV_per_angstrom": 0.015611079523250481, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 0, "bfgs_steps": 4, "converged": true, "max_force_eV_per_angstrom": 0.04225968423670752, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 1, "bfgs_steps": 13, "converged": true, "max_force_eV_per_angstrom": 0.021929858744406325, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 2, "bfgs_steps": 13, "converged": true, "max_force_eV_per_angstrom": 0.03902859873890533, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 3, "bfgs_steps": 11, "converged": true, "max_force_eV_per_angstrom": 0.021832518266221707, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 4, "bfgs_steps": 13, "converged": true, "max_force_eV_per_angstrom": 0.021031303677121943, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 5, "bfgs_steps": 14, "converged": true, "max_force_eV_per_angstrom": 0.03238969767530244, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 6, "bfgs_steps": 7, "converged": true, "max_force_eV_per_angstrom": 0.04514179473608253, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 7, "bfgs_steps": 12, "converged": true, "max_force_eV_per_angstrom": 0.04182592921412831, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 8, "bfgs_steps": 6, "converged": true, "max_force_eV_per_angstrom": 0.03852848154709153, "fmax_target": 0.05, "opt_steps_limit": 20}
+{"step": 9, "bfgs_steps": 20, "converged": true, "max_force_eV_per_angstrom": 0.015312529691487147, "fmax_target": 0.05, "opt_steps_limit": 20}

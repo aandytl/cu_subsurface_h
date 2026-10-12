@@ -1,0 +1,27 @@
+{
+  "proposals": 10,
+  "accepted": 6,
+  "operations": {
+    "add_H": 3,
+    "add_CO": 1,
+    "move_H": 2,
+    "move_CO": 2,
+    "remove_H": 2
+  },
+  "optimizations": 11,
+  "converged": 11,
+  "total_bfgs_steps": 115,
+  "max_final_force_eV_per_A": 0.04514179473608253,
+  "final": {
+    "step": 9,
+    "operation": "move_CO",
+    "accepted": false,
+    "delta_G": 0.038006876518466015,
+    "energy": -1534.8504849612614,
+    "current_energy_eV": -1534.8884918377798,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  "output_file_bytes": 3137571,
+  "limitation": "10 proposals with approximate mu; not equilibrium coverage or full paper reproduction"
+}

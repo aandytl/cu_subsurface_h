@@ -1,0 +1,502 @@
+[
+  {
+    "step": 0,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.145760462311364,
+    "energy": -1512.65175613578,
+    "current_energy_eV": -1512.65175613578,
+    "n_CO": 0,
+    "n_H": 1
+  },
+  {
+    "step": 1,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -0.7143450349295564,
+    "energy": -1515.7953949929913,
+    "current_energy_eV": -1515.7953949929913,
+    "n_CO": 0,
+    "n_H": 2
+  },
+  {
+    "step": 2,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.004847119858752,
+    "energy": -1531.085074862754,
+    "current_energy_eV": -1531.085074862754,
+    "n_CO": 1,
+    "n_H": 2
+  },
+  {
+    "step": 3,
+    "operation": "move_H",
+    "accepted": true,
+    "delta_G": -0.4305390618851561,
+    "energy": -1531.5156139246392,
+    "current_energy_eV": -1531.5156139246392,
+    "n_CO": 1,
+    "n_H": 2
+  },
+  {
+    "step": 4,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -0.7130392969139394,
+    "energy": -1534.6579470438348,
+    "current_energy_eV": -1534.6579470438348,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 5,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": -0.2305447939450005,
+    "energy": -1534.8884918377798,
+    "current_energy_eV": -1534.8884918377798,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 6,
+    "operation": "remove_H",
+    "accepted": false,
+    "delta_G": 0.7131421197915189,
+    "energy": -1531.7460558957066,
+    "current_energy_eV": -1534.8884918377798,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 7,
+    "operation": "move_H",
+    "accepted": false,
+    "delta_G": 0.4276753554352126,
+    "energy": -1534.4608164823446,
+    "current_energy_eV": -1534.8884918377798,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 8,
+    "operation": "remove_H",
+    "accepted": false,
+    "delta_G": 1.140503752660925,
+    "energy": -1531.3186942628372,
+    "current_energy_eV": -1534.8884918377798,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 9,
+    "operation": "move_CO",
+    "accepted": false,
+    "delta_G": 0.038006876518466015,
+    "energy": -1534.8504849612614,
+    "current_energy_eV": -1534.8884918377798,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 10,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": 0.036454037028534,
+    "energy": -1534.8520378007513,
+    "current_energy_eV": -1534.8520378007513,
+    "n_CO": 1,
+    "n_H": 3
+  },
+  {
+    "step": 11,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.7770164623940872,
+    "energy": -1550.9138870130494,
+    "current_energy_eV": -1550.9138870130494,
+    "n_CO": 2,
+    "n_H": 3
+  },
+  {
+    "step": 12,
+    "operation": "remove_H",
+    "accepted": false,
+    "delta_G": 1.2057155411192526,
+    "energy": -1547.2788776496484,
+    "current_energy_eV": -1550.9138870130494,
+    "n_CO": 2,
+    "n_H": 3
+  },
+  {
+    "step": 13,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.1473019856931388,
+    "energy": -1554.4904828210242,
+    "current_energy_eV": -1554.4904828210242,
+    "n_CO": 2,
+    "n_H": 4
+  },
+  {
+    "step": 14,
+    "operation": "move_CO",
+    "accepted": false,
+    "delta_G": 0.20234122550118627,
+    "energy": -1554.288141595523,
+    "current_energy_eV": -1554.4904828210242,
+    "n_CO": 2,
+    "n_H": 4
+  },
+  {
+    "step": 15,
+    "operation": "move_H",
+    "accepted": true,
+    "delta_G": -0.029153857335359135,
+    "energy": -1554.5196366783596,
+    "current_energy_eV": -1554.5196366783596,
+    "n_CO": 2,
+    "n_H": 4
+  },
+  {
+    "step": 16,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.2187419810492628,
+    "energy": -1570.0232114093128,
+    "current_energy_eV": -1570.0232114093128,
+    "n_CO": 3,
+    "n_H": 4
+  },
+  {
+    "step": 17,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": -0.04135577422357528,
+    "energy": -1570.0645671835364,
+    "current_energy_eV": -1570.0645671835364,
+    "n_CO": 3,
+    "n_H": 4
+  },
+  {
+    "step": 18,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -0.718858700419196,
+    "energy": -1573.2127197062373,
+    "current_energy_eV": -1573.2127197062373,
+    "n_CO": 3,
+    "n_H": 5
+  },
+  {
+    "step": 19,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -0.7166446355002791,
+    "energy": -1576.3586581640193,
+    "current_energy_eV": -1576.3586581640193,
+    "n_CO": 3,
+    "n_H": 6
+  },
+  {
+    "step": 20,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": -1.0016478720840496,
+    "energy": -1577.3603060361033,
+    "current_energy_eV": -1577.3603060361033,
+    "n_CO": 3,
+    "n_H": 6
+  },
+  {
+    "step": 21,
+    "operation": "move_H",
+    "accepted": true,
+    "delta_G": 0.04632333404902056,
+    "energy": -1577.3139827020543,
+    "current_energy_eV": -1577.3139827020543,
+    "n_CO": 3,
+    "n_H": 6
+  },
+  {
+    "step": 22,
+    "operation": "remove_CO",
+    "accepted": false,
+    "delta_G": 1.1944990291485027,
+    "energy": -1561.8346509230018,
+    "current_energy_eV": -1577.3139827020543,
+    "n_CO": 3,
+    "n_H": 6
+  },
+  {
+    "step": 23,
+    "operation": "remove_CO",
+    "accepted": false,
+    "delta_G": 1.2351197411052652,
+    "energy": -1561.794030211045,
+    "current_energy_eV": -1577.3139827020543,
+    "n_CO": 3,
+    "n_H": 6
+  },
+  {
+    "step": 24,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.286736334757825,
+    "energy": -1581.0300128590939,
+    "current_energy_eV": -1581.0300128590939,
+    "n_CO": 3,
+    "n_H": 7
+  },
+  {
+    "step": 25,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.247417543995354,
+    "energy": -1596.5622631529932,
+    "current_energy_eV": -1596.5622631529932,
+    "n_CO": 4,
+    "n_H": 7
+  },
+  {
+    "step": 26,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.1453836171807326,
+    "energy": -1600.1369405924556,
+    "current_energy_eV": -1600.1369405924556,
+    "n_CO": 4,
+    "n_H": 8
+  },
+  {
+    "step": 27,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -0.9949953566210041,
+    "energy": -1615.4167686989806,
+    "current_energy_eV": -1615.4167686989806,
+    "n_CO": 5,
+    "n_H": 8
+  },
+  {
+    "step": 28,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.2152028026602437,
+    "energy": -1630.9168042515448,
+    "current_energy_eV": -1630.9168042515448,
+    "n_CO": 6,
+    "n_H": 8
+  },
+  {
+    "step": 29,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.5037376097924806,
+    "energy": -1646.7053746112413,
+    "current_energy_eV": -1646.7053746112413,
+    "n_CO": 7,
+    "n_H": 8
+  },
+  {
+    "step": 30,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": -0.011044100512435762,
+    "energy": -1646.7164187117537,
+    "current_energy_eV": -1646.7164187117537,
+    "n_CO": 7,
+    "n_H": 8
+  },
+  {
+    "step": 31,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": -0.017143239103461383,
+    "energy": -1646.7335619508572,
+    "current_energy_eV": -1646.7335619508572,
+    "n_CO": 7,
+    "n_H": 8
+  },
+  {
+    "step": 32,
+    "operation": "remove_CO",
+    "accepted": false,
+    "delta_G": 1.2243032674374916,
+    "energy": -1631.2244259335157,
+    "current_energy_eV": -1646.7335619508572,
+    "n_CO": 7,
+    "n_H": 8
+  },
+  {
+    "step": 33,
+    "operation": "remove_H",
+    "accepted": false,
+    "delta_G": 1.207351780113504,
+    "energy": -1643.096916348462,
+    "current_energy_eV": -1646.7335619508572,
+    "n_CO": 7,
+    "n_H": 8
+  },
+  {
+    "step": 34,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.2296531674298166,
+    "energy": -1662.248047868191,
+    "current_energy_eV": -1662.248047868191,
+    "n_CO": 8,
+    "n_H": 8
+  },
+  {
+    "step": 35,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.1637097102412555,
+    "energy": -1665.841051400714,
+    "current_energy_eV": -1665.841051400714,
+    "n_CO": 8,
+    "n_H": 9
+  },
+  {
+    "step": 36,
+    "operation": "remove_CO",
+    "accepted": false,
+    "delta_G": 1.1984695007280806,
+    "energy": -1650.3577491500819,
+    "current_energy_eV": -1665.841051400714,
+    "n_CO": 8,
+    "n_H": 9
+  },
+  {
+    "step": 37,
+    "operation": "move_H",
+    "accepted": false,
+    "delta_G": 0.03479973680191506,
+    "energy": -1665.806251663912,
+    "current_energy_eV": -1665.841051400714,
+    "n_CO": 8,
+    "n_H": 9
+  },
+  {
+    "step": 38,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.203270708488708,
+    "energy": -1669.4736159314843,
+    "current_energy_eV": -1669.4736159314843,
+    "n_CO": 8,
+    "n_H": 10
+  },
+  {
+    "step": 39,
+    "operation": "remove_CO",
+    "accepted": false,
+    "delta_G": 1.197827616998822,
+    "energy": -1653.9909555645816,
+    "current_energy_eV": -1669.4736159314843,
+    "n_CO": 8,
+    "n_H": 10
+  },
+  {
+    "step": 40,
+    "operation": "move_H",
+    "accepted": true,
+    "delta_G": -0.020090019462486453,
+    "energy": -1669.4937059509468,
+    "current_energy_eV": -1669.4937059509468,
+    "n_CO": 8,
+    "n_H": 10
+  },
+  {
+    "step": 41,
+    "operation": "move_H",
+    "accepted": false,
+    "delta_G": 0.507582944655951,
+    "energy": -1668.9861230062909,
+    "current_energy_eV": -1669.4937059509468,
+    "n_CO": 8,
+    "n_H": 10
+  },
+  {
+    "step": 42,
+    "operation": "remove_CO",
+    "accepted": false,
+    "delta_G": 1.190380114485535,
+    "energy": -1654.0184930865573,
+    "current_energy_eV": -1669.4937059509468,
+    "n_CO": 8,
+    "n_H": 10
+  },
+  {
+    "step": 43,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.1411338523729229,
+    "energy": -1673.0641336256015,
+    "current_energy_eV": -1673.0641336256015,
+    "n_CO": 8,
+    "n_H": 11
+  },
+  {
+    "step": 44,
+    "operation": "move_H",
+    "accepted": false,
+    "delta_G": 0.490852642633854,
+    "energy": -1672.5732809829676,
+    "current_energy_eV": -1673.0641336256015,
+    "n_CO": 8,
+    "n_H": 11
+  },
+  {
+    "step": 45,
+    "operation": "move_CO",
+    "accepted": true,
+    "delta_G": -0.03783477075057817,
+    "energy": -1673.101968396352,
+    "current_energy_eV": -1673.101968396352,
+    "n_CO": 8,
+    "n_H": 11
+  },
+  {
+    "step": 46,
+    "operation": "remove_H",
+    "accepted": false,
+    "delta_G": 1.2202700792769066,
+    "energy": -1669.4524044947934,
+    "current_energy_eV": -1673.101968396352,
+    "n_CO": 8,
+    "n_H": 11
+  },
+  {
+    "step": 47,
+    "operation": "remove_H",
+    "accepted": false,
+    "delta_G": 1.1991559885958396,
+    "energy": -1669.4735185854745,
+    "current_energy_eV": -1673.101968396352,
+    "n_CO": 8,
+    "n_H": 11
+  },
+  {
+    "step": 48,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -1.1631690898269427,
+    "energy": -1676.6944313084607,
+    "current_energy_eV": -1676.6944313084607,
+    "n_CO": 8,
+    "n_H": 12
+  },
+  {
+    "step": 49,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.1816705625400772,
+    "energy": -1692.1609346209048,
+    "current_energy_eV": -1692.1609346209048,
+    "n_CO": 9,
+    "n_H": 12
+  }
+]

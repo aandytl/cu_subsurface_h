@@ -1,0 +1,23 @@
+	Command being timed: "timeout --signal=TERM --kill-after=30s 5400s taskset -c 0-3 .venv/bin/python reproduction/evaluate_model.py --model DP-GEN_file/DP-GEN_file/model_4.pb --data DP-GEN_test_data/test_data --frames 9893 --threads 4 --output reproduction/results/test_all.json"
+	User time (seconds): 2235.37
+	System time (seconds): 34.52
+	Percent of CPU this job got: 278%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:35.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 701308
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 44627
+	Minor (reclaiming a frame) page faults: 1501673
+	Voluntary context switches: 8289068
+	Involuntary context switches: 45846
+	Swaps: 0
+	File system inputs: 892118
+	File system outputs: 4671
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,23 @@
+	Command being timed: "timeout --signal=TERM --kill-after=30s 900s taskset -c 0-3 .venv/bin/python reproduction/refine_gas_references.py --probe reproduction/results/gas_probe.json --output reproduction/results/gas_refined.json"
+	User time (seconds): 4.30
+	System time (seconds): 1.55
+	Percent of CPU this job got: 19%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 591144
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35164
+	Minor (reclaiming a frame) page faults: 125888
+	Voluntary context switches: 15549
+	Involuntary context switches: 29
+	Swaps: 0
+	File system inputs: 552183
+	File system outputs: 21
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

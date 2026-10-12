@@ -1,0 +1,14 @@
+{
+  "nwag128.pdf": {
+    "bytes": 1354479,
+    "sha256": "d001a72301c60eb3719f4c3090b23ef8bb08a56269bd3d63285ca3394a6ccedd"
+  },
+  "nwag128_supplemental_file.pdf": {
+    "bytes": 6608465,
+    "sha256": "2e8fcd5beb3f0ee9983bb6ac53dff1cc0236cdbf5e6b803eee3debbc822345ab"
+  },
+  "DP-GEN_file/DP-GEN_file/model_4.pb": {
+    "bytes": 17432268,
+    "sha256": "b61a2f46dfd4f2807f3930536bf09c6c5d7d8d97616d77b6e9587e2d9b40aee3"
+  }
+}

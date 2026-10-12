@@ -1,0 +1,745 @@
+{
+  "model": "/home/LYT/projects/cu_surface_calc/DP-GEN_file/DP-GEN_file/model_4.pb",
+  "data": "/home/LYT/projects/cu_surface_calc/DP-GEN_test_data/test_data",
+  "type_map": [
+    "Cu",
+    "C",
+    "O",
+    "H"
+  ],
+  "available_frames": 9893,
+  "evaluated_frames": 100,
+  "energy_rmse_meV_per_atom": 5.612462227796289,
+  "force_component_rmse_meV_per_angstrom": 91.55783470932064,
+  "elapsed_seconds": 70.29136055707932,
+  "threads": 4,
+  "timing_seconds": {
+    "model_load": 2.2354583451524377,
+    "dataset_index": 36.83524376805872,
+    "evaluation": 31.220648789778352
+  },
+  "python": "3.9.23",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "ase": "3.23.0",
+    "deepmd-kit": "2.2.10",
+    "tensorflow-cpu": "2.16.1"
+  },
+  "dtypes_coord_energy_force": [
+    [
+      "float64",
+      "float64",
+      "float64"
+    ]
+  ],
+  "sampling": "evenly spaced in lexicographically ordered dataset",
+  "frames": [
+    {
+      "system": "DP-GEN_test_data/test_data/Cu24C0O0H0/set.000",
+      "frame": 0,
+      "atoms": 24,
+      "energy_error_eV_per_atom": -0.009234500533818727,
+      "force_component_rmse_meV_per_angstrom": 17.077252917132977
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu24C3O3H3/set.000",
+      "frame": 0,
+      "atoms": 33,
+      "energy_error_eV_per_atom": -0.004330129129680348,
+      "force_component_rmse_meV_per_angstrom": 86.6882380624453
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu24C6O6H0/set.000",
+      "frame": 4,
+      "atoms": 36,
+      "energy_error_eV_per_atom": -0.001720533308234135,
+      "force_component_rmse_meV_per_angstrom": 125.03074523144983
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu30C0O0H14/set.000",
+      "frame": 10,
+      "atoms": 44,
+      "energy_error_eV_per_atom": -0.0017596950908579277,
+      "force_component_rmse_meV_per_angstrom": 58.070985506407474
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu30C1O1H14/set.000",
+      "frame": 1,
+      "atoms": 46,
+      "energy_error_eV_per_atom": 0.0016568645356737416,
+      "force_component_rmse_meV_per_angstrom": 83.23170242225142
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu30C3O3H10/set.000",
+      "frame": 21,
+      "atoms": 46,
+      "energy_error_eV_per_atom": -0.003955349978217332,
+      "force_component_rmse_meV_per_angstrom": 72.78017258364783
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu30C4O4H9/set.000",
+      "frame": 1,
+      "atoms": 47,
+      "energy_error_eV_per_atom": 0.012175214942354212,
+      "force_component_rmse_meV_per_angstrom": 96.98448981990597
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu32C0O0H15/set.000",
+      "frame": 0,
+      "atoms": 47,
+      "energy_error_eV_per_atom": -0.0010056277289871762,
+      "force_component_rmse_meV_per_angstrom": 82.91232780378549
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu32C1O1H12/set.000",
+      "frame": 5,
+      "atoms": 46,
+      "energy_error_eV_per_atom": -0.008172088914139038,
+      "force_component_rmse_meV_per_angstrom": 85.25332280560701
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu32C2O2H6/set.000",
+      "frame": 0,
+      "atoms": 42,
+      "energy_error_eV_per_atom": -0.010907856651038,
+      "force_component_rmse_meV_per_angstrom": 92.85529336563243
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu32C3O3H8/set.000",
+      "frame": 1,
+      "atoms": 46,
+      "energy_error_eV_per_atom": 0.0028706472646316274,
+      "force_component_rmse_meV_per_angstrom": 84.4663610003985
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu32C5O5H0/set.000",
+      "frame": 5,
+      "atoms": 42,
+      "energy_error_eV_per_atom": -0.004119175886663535,
+      "force_component_rmse_meV_per_angstrom": 72.20779558808292
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C0O0H10/set.000",
+      "frame": 13,
+      "atoms": 46,
+      "energy_error_eV_per_atom": -0.01310801430506474,
+      "force_component_rmse_meV_per_angstrom": 82.54268137857136
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C0O0H13/set.000",
+      "frame": 24,
+      "atoms": 49,
+      "energy_error_eV_per_atom": 0.0048854028170750305,
+      "force_component_rmse_meV_per_angstrom": 47.42401319983769
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C0O0H15/set.000",
+      "frame": 33,
+      "atoms": 51,
+      "energy_error_eV_per_atom": -0.0008449825626614399,
+      "force_component_rmse_meV_per_angstrom": 57.832646959147965
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C0O0H2/set.000",
+      "frame": 19,
+      "atoms": 38,
+      "energy_error_eV_per_atom": 0.011029285645058826,
+      "force_component_rmse_meV_per_angstrom": 26.46084372385945
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C0O0H5/set.000",
+      "frame": 9,
+      "atoms": 41,
+      "energy_error_eV_per_atom": -0.017791022064618186,
+      "force_component_rmse_meV_per_angstrom": 51.207455259724235
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C0O0H8/set.000",
+      "frame": 14,
+      "atoms": 44,
+      "energy_error_eV_per_atom": 0.0009724510445071711,
+      "force_component_rmse_meV_per_angstrom": 51.67678135748348
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H1/set.000",
+      "frame": 63,
+      "atoms": 39,
+      "energy_error_eV_per_atom": -0.0009200519496142207,
+      "force_component_rmse_meV_per_angstrom": 37.158124470903395
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H1/set.000",
+      "frame": 163,
+      "atoms": 39,
+      "energy_error_eV_per_atom": 0.00012808053831201086,
+      "force_component_rmse_meV_per_angstrom": 36.35457675756357
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H1/set.000",
+      "frame": 263,
+      "atoms": 39,
+      "energy_error_eV_per_atom": 0.0038583520402685513,
+      "force_component_rmse_meV_per_angstrom": 38.874383166071446
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H11/set.000",
+      "frame": 8,
+      "atoms": 49,
+      "energy_error_eV_per_atom": -0.0006990612792956384,
+      "force_component_rmse_meV_per_angstrom": 67.8083666918206
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H13/set.000",
+      "frame": 15,
+      "atoms": 51,
+      "energy_error_eV_per_atom": -7.768018499307033e-05,
+      "force_component_rmse_meV_per_angstrom": 60.54646620887993
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H17/set.000",
+      "frame": 6,
+      "atoms": 55,
+      "energy_error_eV_per_atom": -0.005186031008678459,
+      "force_component_rmse_meV_per_angstrom": 88.26321710907483
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C1O1H7/set.000",
+      "frame": 20,
+      "atoms": 45,
+      "energy_error_eV_per_atom": 0.006825611317812748,
+      "force_component_rmse_meV_per_angstrom": 43.575167814611426
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C2O2H1/set.000",
+      "frame": 45,
+      "atoms": 41,
+      "energy_error_eV_per_atom": 0.010366700770542987,
+      "force_component_rmse_meV_per_angstrom": 50.892656867425515
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C2O2H1/set.000",
+      "frame": 145,
+      "atoms": 41,
+      "energy_error_eV_per_atom": 0.010274168033672097,
+      "force_component_rmse_meV_per_angstrom": 48.272232899884536
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C2O2H11/set.000",
+      "frame": 21,
+      "atoms": 51,
+      "energy_error_eV_per_atom": 0.0015348401639654168,
+      "force_component_rmse_meV_per_angstrom": 102.8204445566734
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C2O2H14/set.000",
+      "frame": 14,
+      "atoms": 54,
+      "energy_error_eV_per_atom": -0.0021843323012478567,
+      "force_component_rmse_meV_per_angstrom": 98.07950300584102
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C2O2H4/set.000",
+      "frame": 2,
+      "atoms": 44,
+      "energy_error_eV_per_atom": -0.005526147544638346,
+      "force_component_rmse_meV_per_angstrom": 67.84660501235844
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C2O2H8/set.000",
+      "frame": 14,
+      "atoms": 48,
+      "energy_error_eV_per_atom": -0.004869562600967825,
+      "force_component_rmse_meV_per_angstrom": 74.50990417573229
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H10/set.000",
+      "frame": 12,
+      "atoms": 52,
+      "energy_error_eV_per_atom": 0.006417348721990051,
+      "force_component_rmse_meV_per_angstrom": 63.72555770656181
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H11/set.000",
+      "frame": 45,
+      "atoms": 53,
+      "energy_error_eV_per_atom": 0.001192194006307009,
+      "force_component_rmse_meV_per_angstrom": 83.19851197962751
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H2/set.000",
+      "frame": 12,
+      "atoms": 44,
+      "energy_error_eV_per_atom": 0.007397448470999667,
+      "force_component_rmse_meV_per_angstrom": 45.36191688977756
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H3/set.000",
+      "frame": 99,
+      "atoms": 45,
+      "energy_error_eV_per_atom": -0.009382702883291611,
+      "force_component_rmse_meV_per_angstrom": 68.45418529345926
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H4/set.000",
+      "frame": 8,
+      "atoms": 46,
+      "energy_error_eV_per_atom": 0.010550826549054872,
+      "force_component_rmse_meV_per_angstrom": 67.29710829482222
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H6/set.000",
+      "frame": 23,
+      "atoms": 48,
+      "energy_error_eV_per_atom": -0.0031909427906224863,
+      "force_component_rmse_meV_per_angstrom": 104.96318282470187
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C3O3H9/set.000",
+      "frame": 40,
+      "atoms": 51,
+      "energy_error_eV_per_atom": -0.0025911236109767716,
+      "force_component_rmse_meV_per_angstrom": 61.82591867862707
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C4O4H12/set.000",
+      "frame": 17,
+      "atoms": 56,
+      "energy_error_eV_per_atom": 0.0007440426253053951,
+      "force_component_rmse_meV_per_angstrom": 87.9795966839946
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C4O4H4/set.000",
+      "frame": 17,
+      "atoms": 48,
+      "energy_error_eV_per_atom": -0.00768892350442781,
+      "force_component_rmse_meV_per_angstrom": 116.18671436513144
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C4O4H6/set.000",
+      "frame": 6,
+      "atoms": 50,
+      "energy_error_eV_per_atom": 0.0030389690399988466,
+      "force_component_rmse_meV_per_angstrom": 113.8604281865511
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C4O4H9/set.000",
+      "frame": 32,
+      "atoms": 53,
+      "energy_error_eV_per_atom": -0.006346341981768246,
+      "force_component_rmse_meV_per_angstrom": 96.59757872157479
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C5O5H10/set.000",
+      "frame": 24,
+      "atoms": 56,
+      "energy_error_eV_per_atom": -0.0015908556617917821,
+      "force_component_rmse_meV_per_angstrom": 102.9249380838971
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C5O5H3/set.000",
+      "frame": 7,
+      "atoms": 49,
+      "energy_error_eV_per_atom": -0.0024756822830050737,
+      "force_component_rmse_meV_per_angstrom": 70.69969152241536
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C5O5H9/set.000",
+      "frame": 12,
+      "atoms": 55,
+      "energy_error_eV_per_atom": -3.549147508734181e-06,
+      "force_component_rmse_meV_per_angstrom": 114.7524151144408
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C6O6H1/set.000",
+      "frame": 5,
+      "atoms": 49,
+      "energy_error_eV_per_atom": 0.00748604302312668,
+      "force_component_rmse_meV_per_angstrom": 69.31542738581962
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C6O6H4/set.000",
+      "frame": 5,
+      "atoms": 52,
+      "energy_error_eV_per_atom": 0.007556047017040704,
+      "force_component_rmse_meV_per_angstrom": 159.49768044994505
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C7O7H1/set.000",
+      "frame": 6,
+      "atoms": 51,
+      "energy_error_eV_per_atom": 0.0026007114800379707,
+      "force_component_rmse_meV_per_angstrom": 96.36803481771643
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu36C9O9H0/set.000",
+      "frame": 1,
+      "atoms": 54,
+      "energy_error_eV_per_atom": 0.012834189487882163,
+      "force_component_rmse_meV_per_angstrom": 95.3636207148372
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C0O0H13/set.000",
+      "frame": 27,
+      "atoms": 61,
+      "energy_error_eV_per_atom": -0.0014387919200821036,
+      "force_component_rmse_meV_per_angstrom": 72.37207560036491
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C0O0H16/set.000",
+      "frame": 48,
+      "atoms": 64,
+      "energy_error_eV_per_atom": -0.001406021289046322,
+      "force_component_rmse_meV_per_angstrom": 58.71562113904517
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C0O0H18/set.000",
+      "frame": 46,
+      "atoms": 66,
+      "energy_error_eV_per_atom": 0.004777168665590421,
+      "force_component_rmse_meV_per_angstrom": 51.02464497103823
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C2O2H12/set.000",
+      "frame": 20,
+      "atoms": 64,
+      "energy_error_eV_per_atom": 0.0010417465152072758,
+      "force_component_rmse_meV_per_angstrom": 77.8139163379569
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C3O3H11/set.000",
+      "frame": 21,
+      "atoms": 65,
+      "energy_error_eV_per_atom": 0.000514749356347448,
+      "force_component_rmse_meV_per_angstrom": 45.74574614358793
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C3O3H13/set.000",
+      "frame": 37,
+      "atoms": 67,
+      "energy_error_eV_per_atom": -0.00021781388320607167,
+      "force_component_rmse_meV_per_angstrom": 125.57951432898872
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C4O4H11/set.000",
+      "frame": 28,
+      "atoms": 67,
+      "energy_error_eV_per_atom": -0.0014342230176239287,
+      "force_component_rmse_meV_per_angstrom": 95.64224389054273
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C4O4H8/set.000",
+      "frame": 6,
+      "atoms": 64,
+      "energy_error_eV_per_atom": -0.009312673197286347,
+      "force_component_rmse_meV_per_angstrom": 113.86603849554731
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C5O5H4/set.000",
+      "frame": 39,
+      "atoms": 62,
+      "energy_error_eV_per_atom": -0.004822940169000569,
+      "force_component_rmse_meV_per_angstrom": 70.25678523929334
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C5O5H5/set.000",
+      "frame": 88,
+      "atoms": 63,
+      "energy_error_eV_per_atom": -0.0061900118544027495,
+      "force_component_rmse_meV_per_angstrom": 59.83357727838278
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C6O6H6/set.000",
+      "frame": 12,
+      "atoms": 66,
+      "energy_error_eV_per_atom": 0.0023047514309975227,
+      "force_component_rmse_meV_per_angstrom": 179.88009460101802
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu48C8O8H3/set.000",
+      "frame": 18,
+      "atoms": 67,
+      "energy_error_eV_per_atom": 0.0012026489643491927,
+      "force_component_rmse_meV_per_angstrom": 76.13587943320167
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C0O0H18/set.000",
+      "frame": 6,
+      "atoms": 68,
+      "energy_error_eV_per_atom": 0.009645654872999601,
+      "force_component_rmse_meV_per_angstrom": 72.95810295037161
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C10O10H8/set.000",
+      "frame": 1,
+      "atoms": 78,
+      "energy_error_eV_per_atom": 0.00836550199724611,
+      "force_component_rmse_meV_per_angstrom": 114.93175661443769
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C1O1H20/set.000",
+      "frame": 2,
+      "atoms": 72,
+      "energy_error_eV_per_atom": 0.0006976282112181783,
+      "force_component_rmse_meV_per_angstrom": 62.788403757603184
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C2O2H2/set.000",
+      "frame": 6,
+      "atoms": 56,
+      "energy_error_eV_per_atom": -0.0016475480756840608,
+      "force_component_rmse_meV_per_angstrom": 38.91908319387388
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C2O2H2/set.000",
+      "frame": 106,
+      "atoms": 56,
+      "energy_error_eV_per_atom": -0.002489686207751061,
+      "force_component_rmse_meV_per_angstrom": 46.788243766935096
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C3O3H13/set.000",
+      "frame": 20,
+      "atoms": 69,
+      "energy_error_eV_per_atom": -0.0033483663270309025,
+      "force_component_rmse_meV_per_angstrom": 62.94463778573167
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C3O3H3/set.000",
+      "frame": 26,
+      "atoms": 59,
+      "energy_error_eV_per_atom": -0.0037486592269946628,
+      "force_component_rmse_meV_per_angstrom": 58.84688911750704
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C4O4H19/set.000",
+      "frame": 9,
+      "atoms": 77,
+      "energy_error_eV_per_atom": -0.0005377398631311108,
+      "force_component_rmse_meV_per_angstrom": 73.06561231541379
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C4O4H4/set.000",
+      "frame": 90,
+      "atoms": 62,
+      "energy_error_eV_per_atom": -0.00030519191256099667,
+      "force_component_rmse_meV_per_angstrom": 63.22553503589369
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C4O4H4/set.000",
+      "frame": 190,
+      "atoms": 62,
+      "energy_error_eV_per_atom": 0.002148598246100439,
+      "force_component_rmse_meV_per_angstrom": 62.33409673524758
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C5O5H3/set.000",
+      "frame": 0,
+      "atoms": 63,
+      "energy_error_eV_per_atom": 0.00562217776640348,
+      "force_component_rmse_meV_per_angstrom": 83.60767204149187
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C6O6H15/set.000",
+      "frame": 1,
+      "atoms": 77,
+      "energy_error_eV_per_atom": 0.0011921083504649072,
+      "force_component_rmse_meV_per_angstrom": 95.41571878749711
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C7O7H16/set.000",
+      "frame": 3,
+      "atoms": 80,
+      "energy_error_eV_per_atom": -0.004494501711679533,
+      "force_component_rmse_meV_per_angstrom": 112.12223360117223
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu50C8O8H14/set.000",
+      "frame": 3,
+      "atoms": 80,
+      "energy_error_eV_per_atom": 0.0024429528535698354,
+      "force_component_rmse_meV_per_angstrom": 76.89756174010765
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu54C4O4H10/set.000",
+      "frame": 15,
+      "atoms": 72,
+      "energy_error_eV_per_atom": -0.0014726418192267943,
+      "force_component_rmse_meV_per_angstrom": 62.30745684823564
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu54C9O9H0/set.000",
+      "frame": 18,
+      "atoms": 72,
+      "energy_error_eV_per_atom": 0.00016121445074190888,
+      "force_component_rmse_meV_per_angstrom": 63.026275455803706
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C10O10H14/set.000",
+      "frame": 0,
+      "atoms": 89,
+      "energy_error_eV_per_atom": 0.006276532929640898,
+      "force_component_rmse_meV_per_angstrom": 137.6279022889738
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C13O13H14/set.000",
+      "frame": 1,
+      "atoms": 95,
+      "energy_error_eV_per_atom": 0.008134061732289411,
+      "force_component_rmse_meV_per_angstrom": 162.82368929911524
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C17O17H16/set.000",
+      "frame": 3,
+      "atoms": 105,
+      "energy_error_eV_per_atom": 0.00485035042143766,
+      "force_component_rmse_meV_per_angstrom": 138.7213951739201
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C1O1H2/set.000",
+      "frame": 65,
+      "atoms": 59,
+      "energy_error_eV_per_atom": 0.00959589877102016,
+      "force_component_rmse_meV_per_angstrom": 56.83136401932598
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C24O24H6/set.000",
+      "frame": 4,
+      "atoms": 109,
+      "energy_error_eV_per_atom": -0.0018621369228969693,
+      "force_component_rmse_meV_per_angstrom": 145.37568567847316
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C38O38H4/set.000",
+      "frame": 0,
+      "atoms": 135,
+      "energy_error_eV_per_atom": -0.001153835712743448,
+      "force_component_rmse_meV_per_angstrom": 205.3690434294083
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C3O3H6/set.000",
+      "frame": 78,
+      "atoms": 67,
+      "energy_error_eV_per_atom": -0.0006141451760134348,
+      "force_component_rmse_meV_per_angstrom": 77.49065162386657
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C4O4H38/set.000",
+      "frame": 2,
+      "atoms": 101,
+      "energy_error_eV_per_atom": 0.0030050485058369654,
+      "force_component_rmse_meV_per_angstrom": 113.41353644554145
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu55C8O8H10/set.000",
+      "frame": 0,
+      "atoms": 81,
+      "energy_error_eV_per_atom": -0.011692229733677166,
+      "force_component_rmse_meV_per_angstrom": 147.4428410158312
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu64C3O3H10/set.000",
+      "frame": 16,
+      "atoms": 80,
+      "energy_error_eV_per_atom": -0.0039896330380237545,
+      "force_component_rmse_meV_per_angstrom": 53.33493794080925
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu64C8O8H0/set.000",
+      "frame": 30,
+      "atoms": 80,
+      "energy_error_eV_per_atom": 0.006876907928484855,
+      "force_component_rmse_meV_per_angstrom": 52.14020481043914
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C0O0H24/set.000",
+      "frame": 4,
+      "atoms": 96,
+      "energy_error_eV_per_atom": 0.0024669949309087023,
+      "force_component_rmse_meV_per_angstrom": 63.72668358859851
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C0O0H26/set.000",
+      "frame": 48,
+      "atoms": 98,
+      "energy_error_eV_per_atom": -0.0037700382497266164,
+      "force_component_rmse_meV_per_angstrom": 55.36310026073142
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C0O0H31/set.000",
+      "frame": 17,
+      "atoms": 103,
+      "energy_error_eV_per_atom": -0.0014384679168294046,
+      "force_component_rmse_meV_per_angstrom": 78.99327569155865
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C2O2H19/set.000",
+      "frame": 7,
+      "atoms": 95,
+      "energy_error_eV_per_atom": 0.0013368524685766284,
+      "force_component_rmse_meV_per_angstrom": 62.46242192777554
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C3O3H17/set.000",
+      "frame": 1,
+      "atoms": 95,
+      "energy_error_eV_per_atom": 0.00026425382346276726,
+      "force_component_rmse_meV_per_angstrom": 62.28119258556172
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C4O4H17/set.000",
+      "frame": 21,
+      "atoms": 97,
+      "energy_error_eV_per_atom": 0.0017167745471554263,
+      "force_component_rmse_meV_per_angstrom": 70.53280628575726
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C5O5H17/set.000",
+      "frame": 2,
+      "atoms": 99,
+      "energy_error_eV_per_atom": 4.0237236271652845e-05,
+      "force_component_rmse_meV_per_angstrom": 99.35611501464003
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu72C8O8H8/set.000",
+      "frame": 3,
+      "atoms": 96,
+      "energy_error_eV_per_atom": -0.0031451281692937982,
+      "force_component_rmse_meV_per_angstrom": 92.54622179633787
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu75C0O0H25/set.000",
+      "frame": 48,
+      "atoms": 100,
+      "energy_error_eV_per_atom": -0.0012806489384672658,
+      "force_component_rmse_meV_per_angstrom": 42.713086563127575
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu75C2O2H17/set.000",
+      "frame": 2,
+      "atoms": 96,
+      "energy_error_eV_per_atom": 0.0031847553667745387,
+      "force_component_rmse_meV_per_angstrom": 53.8802703170219
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu75C4O4H18/set.000",
+      "frame": 30,
+      "atoms": 101,
+      "energy_error_eV_per_atom": -0.0024877056445649654,
+      "force_component_rmse_meV_per_angstrom": 105.08459209462694
+    },
+    {
+      "system": "DP-GEN_test_data/test_data/Cu75C7O7H7/set.000",
+      "frame": 55,
+      "atoms": 96,
+      "energy_error_eV_per_atom": 0.002410874652326219,
+      "force_component_rmse_meV_per_angstrom": 49.414269860154185
+    }
+  ]
+}

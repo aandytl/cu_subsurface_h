@@ -1,0 +1,280 @@
+{
+  "status": "unvalidated MLIP extrapolation; never auto-start GCMC",
+  "model": "/home/LYT/projects/cu_surface_calc/DP-GEN_file/DP-GEN_file/model_4.pb",
+  "type_map": [
+    "Cu",
+    "C",
+    "O",
+    "H"
+  ],
+  "rcut_angstrom": 7.0,
+  "gas_probes": {
+    "H2": {
+      "symbols": [
+        "H",
+        "H"
+      ],
+      "nominal_bond_angstrom": 0.74,
+      "curve": [
+        {
+          "bond_angstrom": 0.5,
+          "cell_angstrom": 20.0,
+          "energy_eV": -5.121453033739303,
+          "max_force_eV_per_angstrom": 13.759835665962482
+        },
+        {
+          "bond_angstrom": 0.55,
+          "cell_angstrom": 20.0,
+          "energy_eV": -5.784593899448698,
+          "max_force_eV_per_angstrom": 12.357643253328254
+        },
+        {
+          "bond_angstrom": 0.6,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.318757311908491,
+          "max_force_eV_per_angstrom": 8.759152157806259
+        },
+        {
+          "bond_angstrom": 0.65,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.655398712097444,
+          "max_force_eV_per_angstrom": 4.815593619660207
+        },
+        {
+          "bond_angstrom": 0.7000000000000001,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.817713008696261,
+          "max_force_eV_per_angstrom": 1.865348813865214
+        },
+        {
+          "bond_angstrom": 0.75,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.858424635773442,
+          "max_force_eV_per_angstrom": 0.10241689208482868
+        },
+        {
+          "bond_angstrom": 0.8,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.817992163673804,
+          "max_force_eV_per_angstrom": 1.4353110813651875
+        },
+        {
+          "bond_angstrom": 0.8500000000000001,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.720803956080518,
+          "max_force_eV_per_angstrom": 2.410918840968384
+        },
+        {
+          "bond_angstrom": 0.9000000000000001,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.579550011883361,
+          "max_force_eV_per_angstrom": 3.225805208352032
+        },
+        {
+          "bond_angstrom": 0.9500000000000001,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.39856145371713,
+          "max_force_eV_per_angstrom": 4.017853181325343
+        },
+        {
+          "bond_angstrom": 1.0,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.177081826437593,
+          "max_force_eV_per_angstrom": 4.847251746724154
+        },
+        {
+          "bond_angstrom": 1.0500000000000003,
+          "cell_angstrom": 20.0,
+          "energy_eV": -5.913855463924263,
+          "max_force_eV_per_angstrom": 5.672766453263815
+        },
+        {
+          "bond_angstrom": 1.1,
+          "cell_angstrom": 20.0,
+          "energy_eV": -5.611790258602479,
+          "max_force_eV_per_angstrom": 6.3795309669625695
+        }
+      ],
+      "nominal_cell_checks": [
+        {
+          "bond_angstrom": 0.74,
+          "cell_angstrom": 15.0,
+          "energy_eV": -6.857810653203916,
+          "max_force_eV_per_angstrom": 0.22960916574607507
+        },
+        {
+          "bond_angstrom": 0.74,
+          "cell_angstrom": 20.0,
+          "energy_eV": -6.857810653203915,
+          "max_force_eV_per_angstrom": 0.2296091657461128
+        },
+        {
+          "bond_angstrom": 0.74,
+          "cell_angstrom": 25.0,
+          "energy_eV": -6.857810653203915,
+          "max_force_eV_per_angstrom": 0.2296091657461663
+        }
+      ],
+      "separated_atoms": {
+        "bond_angstrom": 10.0,
+        "cell_angstrom": 30.0,
+        "energy_eV": -2.3322129068796746,
+        "max_force_eV_per_angstrom": 0.0
+      },
+      "scanned_minimum": {
+        "bond_angstrom": 0.75,
+        "cell_angstrom": 20.0,
+        "energy_eV": -6.858424635773442,
+        "max_force_eV_per_angstrom": 0.10241689208482868
+      },
+      "vacuum_energy_span_eV": 8.881784197001252e-16,
+      "screening_flags": []
+    },
+    "CO": {
+      "symbols": [
+        "C",
+        "O"
+      ],
+      "nominal_bond_angstrom": 1.13,
+      "curve": [
+        {
+          "bond_angstrom": 0.9,
+          "cell_angstrom": 20.0,
+          "energy_eV": -8.337258428192065,
+          "max_force_eV_per_angstrom": 50.996627363620235
+        },
+        {
+          "bond_angstrom": 0.9416666666666667,
+          "cell_angstrom": 20.0,
+          "energy_eV": -10.349983865257045,
+          "max_force_eV_per_angstrom": 44.65183730361746
+        },
+        {
+          "bond_angstrom": 0.9833333333333334,
+          "cell_angstrom": 20.0,
+          "energy_eV": -11.992610659340954,
+          "max_force_eV_per_angstrom": 33.69303051510696
+        },
+        {
+          "bond_angstrom": 1.025,
+          "cell_angstrom": 20.0,
+          "energy_eV": -13.146349873200288,
+          "max_force_eV_per_angstrom": 21.874846016192322
+        },
+        {
+          "bond_angstrom": 1.0666666666666667,
+          "cell_angstrom": 20.0,
+          "energy_eV": -13.846027842178128,
+          "max_force_eV_per_angstrom": 12.152059943006986
+        },
+        {
+          "bond_angstrom": 1.1083333333333334,
+          "cell_angstrom": 20.0,
+          "energy_eV": -14.194238649397455,
+          "max_force_eV_per_angstrom": 4.9379834983237245
+        },
+        {
+          "bond_angstrom": 1.15,
+          "cell_angstrom": 20.0,
+          "energy_eV": -14.284291758186097,
+          "max_force_eV_per_angstrom": 0.3434214428933451
+        },
+        {
+          "bond_angstrom": 1.1916666666666667,
+          "cell_angstrom": 20.0,
+          "energy_eV": -14.18523629321256,
+          "max_force_eV_per_angstrom": 4.204169646914568
+        },
+        {
+          "bond_angstrom": 1.2333333333333334,
+          "cell_angstrom": 20.0,
+          "energy_eV": -13.949645469050214,
+          "max_force_eV_per_angstrom": 6.930403468631934
+        },
+        {
+          "bond_angstrom": 1.275,
+          "cell_angstrom": 20.0,
+          "energy_eV": -13.621151290357751,
+          "max_force_eV_per_angstrom": 8.6890606024281
+        },
+        {
+          "bond_angstrom": 1.3166666666666667,
+          "cell_angstrom": 20.0,
+          "energy_eV": -13.236573962389599,
+          "max_force_eV_per_angstrom": 9.656707782472077
+        },
+        {
+          "bond_angstrom": 1.3583333333333334,
+          "cell_angstrom": 20.0,
+          "energy_eV": -12.824238725504859,
+          "max_force_eV_per_angstrom": 10.06165064224474
+        },
+        {
+          "bond_angstrom": 1.4,
+          "cell_angstrom": 20.0,
+          "energy_eV": -12.402785645418811,
+          "max_force_eV_per_angstrom": 10.126681207896263
+        }
+      ],
+      "nominal_cell_checks": [
+        {
+          "bond_angstrom": 1.13,
+          "cell_angstrom": 15.0,
+          "energy_eV": -14.26841697359665,
+          "max_force_eV_per_angstrom": 1.988541417686721
+        },
+        {
+          "bond_angstrom": 1.13,
+          "cell_angstrom": 20.0,
+          "energy_eV": -14.26841697359665,
+          "max_force_eV_per_angstrom": 1.988541417686721
+        },
+        {
+          "bond_angstrom": 1.13,
+          "cell_angstrom": 25.0,
+          "energy_eV": -14.26841697359665,
+          "max_force_eV_per_angstrom": 1.988541417686721
+        }
+      ],
+      "separated_atoms": {
+        "bond_angstrom": 10.0,
+        "cell_angstrom": 30.0,
+        "energy_eV": -8.40670359516863,
+        "max_force_eV_per_angstrom": 0.0
+      },
+      "scanned_minimum": {
+        "bond_angstrom": 1.15,
+        "cell_angstrom": 20.0,
+        "energy_eV": -14.284291758186097,
+        "max_force_eV_per_angstrom": 0.3434214428933451
+      },
+      "vacuum_energy_span_eV": 0.0,
+      "screening_flags": [
+        "Nominal gas bond has force >0.5 eV/A"
+      ]
+    }
+  },
+  "assumptions": {
+    "reference_method": "isolated molecules evaluated with supplied MLIP",
+    "u_rhe_V": -1.0,
+    "pH": 7,
+    "pCO_bar": 1.0,
+    "p0_bar": 1.0,
+    "sampling_T_K": 300,
+    "delta_h_eV_per_H": 0.0,
+    "delta_co_eV_per_CO": 0.0,
+    "nominal_bond_source": "reproduction presets, not author gas geometries"
+  },
+  "candidate_mu_eV": {
+    "H": -2.4289053266019573,
+    "CO": -14.26841697359665
+  },
+  "elapsed_seconds": 3.090064157731831,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "limitation": "Passing these screens does not validate gas energies against DFT. All supplied dataset systems contain Cu; isolated gases may be out of distribution."
+}

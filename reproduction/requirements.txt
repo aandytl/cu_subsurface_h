@@ -1,0 +1,5 @@
+numpy==1.26.4
+scipy==1.13.1
+ase==3.23.0
+deepmd-kit==2.2.10
+tensorflow-cpu==2.16.1

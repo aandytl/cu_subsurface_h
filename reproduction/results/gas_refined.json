@@ -1,0 +1,167 @@
+{
+  "status": "MLIP gas approximation; workflow pilot only, not author mu",
+  "source_probe": "/home/LYT/projects/cu_surface_calc/reproduction/results/gas_probe.json",
+  "model": "/home/LYT/projects/cu_surface_calc/DP-GEN_file/DP-GEN_file/model_4.pb",
+  "assumptions": {
+    "reference_method": "isolated molecules evaluated with supplied MLIP",
+    "u_rhe_V": -1.0,
+    "pH": 7,
+    "pCO_bar": 1.0,
+    "p0_bar": 1.0,
+    "sampling_T_K": 300,
+    "delta_h_eV_per_H": 0.0,
+    "delta_co_eV_per_CO": 0.0,
+    "nominal_bond_source": "reproduction presets, not author gas geometries"
+  },
+  "optimizer": {
+    "method": "bounded 1D bond search",
+    "maxiter_per_gas": 50,
+    "xatol_A": 1e-07,
+    "fmax_eV_per_A": 0.05
+  },
+  "gases": {
+    "H2": {
+      "final": {
+        "bond_angstrom": 0.7468299483521068,
+        "energy_eV": -6.858587644563431,
+        "max_force_eV_per_angstrom": 4.168550488126144e-08
+      },
+      "bounds_angstrom": [
+        0.7,
+        0.8
+      ],
+      "converged": true,
+      "optimizer_message": "Solution found.",
+      "evaluations": [
+        {
+          "bond_angstrom": 0.7381966011250105,
+          "energy_eV": -6.8573401301550225,
+          "max_force_eV_per_angstrom": 0.29236079493382383
+        },
+        {
+          "bond_angstrom": 0.7618033988749895,
+          "energy_eV": -6.8550596147586225,
+          "max_force_eV_per_angstrom": 0.4623058146362783
+        },
+        {
+          "bond_angstrom": 0.7236067977499789,
+          "energy_eV": -6.849192348164027,
+          "max_force_eV_per_angstrom": 0.8353494258754484
+        },
+        {
+          "bond_angstrom": 0.747183507500402,
+          "energy_eV": -6.858585601841446,
+          "max_force_eV_per_angstrom": 0.011549854257135783
+        },
+        {
+          "bond_angstrom": 0.7469974630027645,
+          "energy_eV": -6.8585871857880925,
+          "max_force_eV_per_angstrom": 0.005476268226554559
+        },
+        {
+          "bond_angstrom": 0.7468358005866311,
+          "energy_eV": -6.858587644003492,
+          "max_force_eV_per_angstrom": 0.0001913991065566334
+        },
+        {
+          "bond_angstrom": 0.7468298675449614,
+          "energy_eV": -6.858587644563321,
+          "max_force_eV_per_angstrom": 2.6851454112408746e-06
+        },
+        {
+          "bond_angstrom": 0.7468299483521068,
+          "energy_eV": -6.858587644563431,
+          "max_force_eV_per_angstrom": 4.168550488126144e-08
+        },
+        {
+          "bond_angstrom": 0.7468299927627184,
+          "energy_eV": -6.858587644563401,
+          "max_force_eV_per_angstrom": 1.4111267458427612e-06
+        },
+        {
+          "bond_angstrom": 0.7468299483521068,
+          "energy_eV": -6.858587644563431,
+          "max_force_eV_per_angstrom": 4.168550488126144e-08
+        }
+      ]
+    },
+    "CO": {
+      "final": {
+        "bond_angstrom": 1.1468616385458907,
+        "energy_eV": -14.28483274990397,
+        "max_force_eV_per_angstrom": 1.8019652047451817e-06
+      },
+      "bounds_angstrom": [
+        1.1083333333333334,
+        1.1916666666666664
+      ],
+      "converged": true,
+      "optimizer_message": "Solution found.",
+      "evaluations": [
+        {
+          "bond_angstrom": 1.140163834270842,
+          "energy_eV": -14.282307810927026,
+          "max_force_eV_per_angstrom": 0.7602620965122974
+        },
+        {
+          "bond_angstrom": 1.1598361657291578,
+          "energy_eV": -14.275807793275996,
+          "max_force_eV_per_angstrom": 1.369035006522842
+        },
+        {
+          "bond_angstrom": 1.1280056647916492,
+          "energy_eV": -14.264200426487612,
+          "max_force_eV_per_angstrom": 2.2406039080250504
+        },
+        {
+          "bond_angstrom": 1.1471102210288013,
+          "energy_eV": -14.284829331018589,
+          "max_force_eV_per_angstrom": 0.027496775648913202
+        },
+        {
+          "bond_angstrom": 1.1469680107425237,
+          "energy_eV": -14.284832123536994,
+          "max_force_eV_per_angstrom": 0.011773538602703054
+        },
+        {
+          "bond_angstrom": 1.14686452275484,
+          "energy_eV": -14.284832749438293,
+          "max_force_eV_per_angstrom": 0.0003211073519027996
+        },
+        {
+          "bond_angstrom": 1.1468615882018511,
+          "energy_eV": -14.28483274990391,
+          "max_force_eV_per_angstrom": 3.7715900965129556e-06
+        },
+        {
+          "bond_angstrom": 1.1468616385458907,
+          "energy_eV": -14.28483274990397,
+          "max_force_eV_per_angstrom": 1.8019652047451817e-06
+        },
+        {
+          "bond_angstrom": 1.1468616888899312,
+          "energy_eV": -14.284832749903735,
+          "max_force_eV_per_angstrom": 7.37551897750377e-06
+        },
+        {
+          "bond_angstrom": 1.1468616385458907,
+          "energy_eV": -14.28483274990397,
+          "max_force_eV_per_angstrom": 1.8019652047451817e-06
+        }
+      ]
+    }
+  },
+  "both_converged": true,
+  "candidate_mu_eV": {
+    "H": -2.4292938222817155,
+    "CO": -14.28483274990397
+  },
+  "elapsed_seconds": 2.600301243364811,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "limitation": "No DFT gas benchmark or adsorbate vibrational thermal correction."
+}

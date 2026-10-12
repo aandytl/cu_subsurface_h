@@ -1,0 +1,12 @@
+/DP-GEN_training_data/
+/DP-GEN_validation_data/
+/DP-GEN_test_data/
+/.venv/
+/.agents/
+/.codex/
+/.aws/
+__pycache__/
+*.pyc
+*.traj
+**/trajectories/
+**/optimized_structures/

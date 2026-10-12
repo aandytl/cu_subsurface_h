@@ -1,0 +1,13 @@
+2026-10-10 22:22:21.132032: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+DeePMD-kit: Successfully load libcudart.so.12
+2026-10-10 22:22:32.579403: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/utils/batch_size.py:28: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices('GPU')` instead.
+You can use the environment variable DP_INFER_BATCH_SIZE tocontrol the inference batch size (nframes * natoms). The default value is 1024.
+H2 converged: True {'bond_angstrom': 0.7468299483521068, 'energy_eV': -6.858587644563431, 'max_force_eV_per_angstrom': 4.168550488126144e-08}
+CO converged: True {'bond_angstrom': 1.1468616385458907, 'energy_eV': -14.28483274990397, 'max_force_eV_per_angstrom': 1.8019652047451817e-06}

@@ -1,0 +1,33 @@
+{
+  "proposals": 50,
+  "accepted": 32,
+  "operations": {
+    "add_H": 12,
+    "add_CO": 9,
+    "move_H": 8,
+    "move_CO": 9,
+    "remove_H": 6,
+    "remove_CO": 6
+  },
+  "optimizations": 51,
+  "converged": 51,
+  "total_bfgs_steps": 1119,
+  "longest_bfgs": 107,
+  "over20": 12,
+  "max_final_force_eV_per_A": 0.04970471776443921,
+  "final": {
+    "step": 49,
+    "operation": "add_CO",
+    "accepted": true,
+    "delta_G": -1.1816705625400772,
+    "energy": -1692.1609346209048,
+    "current_energy_eV": -1692.1609346209048,
+    "n_CO": 9,
+    "n_H": 12
+  },
+  "output_file_bytes": 27787822,
+  "wall_seconds": 726.29,
+  "max_rss_KiB": 1140976,
+  "exit_code": 0,
+  "limitation": "Approximate MLIP gas reference with zero thermal correction; 50 proposals do not establish convergence or reproduce paper coverage."
+}

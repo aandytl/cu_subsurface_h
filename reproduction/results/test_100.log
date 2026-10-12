@@ -1,0 +1,31 @@
+2026-10-10 16:42:13.175411: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:108: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/env.py", line 396, in get_module
+    module = tf.load_op_library(str(module_file))
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/tensorflow/python/framework/load_library.py", line 54, in load_op_library
+    lib_handle = py_tf.TF_LoadLibrary(library_filename)
+tensorflow.python.framework.errors_impl.NotFoundError: /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/lib/libdeepmd_op.so: undefined symbol: _ZN10tensorflow15OpKernelContext10CtxFailureEPKciRKN4absl12lts_202308026StatusE
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/LYT/projects/cu_surface_calc/reproduction/evaluate_model.py", line 93, in <module>
+    main()
+  File "/home/LYT/projects/cu_surface_calc/reproduction/evaluate_model.py", line 27, in main
+    from deepmd.infer import DeepPot
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/__init__.py", line 11, in <module>
+    import deepmd.utils.network as network
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/utils/__init__.py", line 9, in <module>
+    from .learning_rate import (
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/utils/learning_rate.py", line 8, in <module>
+    from deepmd.env import (
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/env.py", line 476, in <module>
+    op_module = get_module("deepmd_op")
+  File "/home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/env.py", line 424, in get_module
+    raise RuntimeError(
+RuntimeError: The version of TensorFlow used to compile this deepmd-kit package is 2.16.1, but the version of TensorFlow runtime you are using is 2.15.1. These two versions are incompatible and thus an error is raised when loading deepmd_op. You need to install TensorFlow 2.16.1, or rebuild deepmd-kit against TensorFlow 2.15.1.
+If you are using a wheel from pypi, you may consider to install deepmd-kit execuating `pip install deepmd-kit --no-binary deepmd-kit` instead.

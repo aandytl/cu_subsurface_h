@@ -1,0 +1,73 @@
+# General VASP parameters
+ISTART = 0
+ENCUT = 400
+ISMEAR = 1
+SIGMA = 0.2
+ALGO = veryfast
+ISYM = 0
+LREAL = Auto
+LWAVE = .FALSE.
+LCHARG = F
+
+NSW = 20 #   inonic  step 
+NELM = 100
+POTIM = 1
+IBRION = 0
+EDIFF = 1E-5
+
+# MD Parameters
+MDALGO = 2
+SMASS = 0
+TEBEG = 298
+TEEND = 298
+IVDW=11
+
+GGA = RE
+
+# 针对32核的优化方式，换成64核要变，gamma点K点默认为1
+#KPAR = 1
+#NCORE = 32
+#NSIM = 2
+#LPLANE = T
+
+
+# CP-VASP Parameters
+#LCEP = .TRUE.
+#NESCHEME = 2
+#CAP_MAX = 2.0
+#NEADJUST = 10
+#TARGETMU = -3.2
+#FERMICONVERGE = 0.01
+#INIT_ECHANGE = 0.2
+###########
+
+
+#VASPSol with SOLHYBRID model
+LSOL       = FALSE
+EB_k       = 78.4
+LAMBDA_D_K = 3.04
+#CORE_C     =   #Number of core electron for each type
+TAU        = 0  
+LSOLHYBRID = .TRUE.
+METHOD_SH  = 1
+SIGMA_SH   =  0.02857  
+ALPHA_SH   =  0.10
+
+#TPOT-恒电位
+LTPOT            = FALSE
+TPOTMETHOD       = 2
+TPOTTRUEVACLEVEL = .TRUE.
+TPOTVTARGET      = 3.2  # same as workfunction
+TPOTVDIFF        = 0.01
+TPOTELECTSTEP    = 0.05
+TPOTDYNVRATE     = .TRUE.
+TPOTVRATE        = -1.6
+TPOTVRATELIM     = 0.05
+TPOTGCENERGY     = .TRUE.
+TPOTGCIONIC      = .TRUE.
+
+#slow-growth
+LBLUEOUT= FALSE
+SHAKETOL=1E-05
+INCREM = -0.0008
+
