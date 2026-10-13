@@ -1,0 +1,23 @@
+	Command being timed: "timeout --signal=TERM --kill-after=30s 10800s prlimit --as=17179869184 taskset -c 0-3 .venv/bin/python GCMC/GCMC/gcmc.py GCMC/GCMC/POSCAR --dp_model DP-GEN_file/DP-GEN_file/model_4.pb --sites-file GCMC/GCMC/adsorption_sites.json --mu-h -2.4292938222817155 --mu-co -14.28483274990397 --steps 200 --temperature 300 --opt-steps 400 --seed 20261010 --output-dir reproduction/results/gcmc_baseline200_mu0"
+	User time (seconds): 14347.29
+	System time (seconds): 2070.62
+	Percent of CPU this job got: 325%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:24:03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1172864
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35480
+	Minor (reclaiming a frame) page faults: 9533306
+	Voluntary context switches: 11227680
+	Involuntary context switches: 73313810
+	Swaps: 0
+	File system inputs: 639905
+	File system outputs: 369501
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

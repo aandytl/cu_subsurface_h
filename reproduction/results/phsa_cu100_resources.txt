@@ -1,0 +1,23 @@
+	Command being timed: "timeout --signal=TERM --kill-after=30s 1800s prlimit --as=17179869184 --fsize=104857600 taskset -c 0-3 .venv/bin/python reproduction/compare_phsa_sites.py --output-dir reproduction/results/phsa_cu100"
+	User time (seconds): 1181.59
+	System time (seconds): 12.27
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 19:53.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1049728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3961
+	Minor (reclaiming a frame) page faults: 1127618
+	Voluntary context switches: 2606
+	Involuntary context switches: 3373
+	Swaps: 0
+	File system inputs: 81665
+	File system outputs: 9879
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

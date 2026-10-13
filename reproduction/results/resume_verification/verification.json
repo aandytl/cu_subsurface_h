@@ -1,0 +1,11 @@
+{
+  "proposal_records_equal": true,
+  "scope": "4 continuous vs 2+2 resumed, same seed/input, 8 proposals total",
+  "final_positions_equal": true,
+  "final_symbols_equal": true,
+  "final_energy_equal": true,
+  "python_rng_equal": true,
+  "numpy_rng_equal": true,
+  "next_step": 4,
+  "output_file_bytes": 2570080
+}

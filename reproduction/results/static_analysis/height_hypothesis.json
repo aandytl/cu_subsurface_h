@@ -1,0 +1,24 @@
+{
+  "scope": "Algebraic height transformation of existing surface sites; hypothesis, not author provenance. Internal sites and topology not regenerated.",
+  "initial_top_z_A": 3.614788571,
+  "species": {
+    "H": {
+      "generated_effective_bond_A": 1.793,
+      "hypothesized_effective_bond_A": 1.63,
+      "unchanged_fallback_sites": 144,
+      "max_nearest_distance_A": 7.052494599372962e-14,
+      "median_nearest_distance_A": 1.0408340855860843e-16,
+      "matched_within_0.0001_A": 576,
+      "CO_min_normal_dot": null
+    },
+    "CO": {
+      "generated_effective_bond_A": 2.178,
+      "hypothesized_effective_bond_A": 2.08,
+      "unchanged_fallback_sites": 0,
+      "max_nearest_distance_A": 7.294831405602054e-09,
+      "median_nearest_distance_A": 0.0,
+      "matched_within_0.0001_A": 576,
+      "CO_min_normal_dot": 1.0
+    }
+  }
+}

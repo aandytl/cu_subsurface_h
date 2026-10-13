@@ -47,12 +47,168 @@
 
 数据集计量目录名（例如 `Cu24C4O4H8`）表示该组原子组成，**不是该组样本帧数**。`C` 和 `O` 数目相同时通常对应完整 CO 分子；H 数目表示氢原子总数，单靠目录名无法区分 `*Hsur` 与 `*Hsub`，须结合坐标、表面层位置和局部环境判定。对于 DFT 结构，`CONTCAR` 是已保存的优化或动力学构型，不能仅凭该文件还原总能、收敛性或势垒。
 
-## 5. 复现条件与现有材料的边界（未运行计算）
+## 5. 目前可进行模拟的指令集合
 
-**软件。** 已提供的 GCMC 脚本需要 Python、NumPy、SciPy、ASE、DeePMD-kit 及其匹配的 TensorFlow/运行时，并需要能读取 `model_4.pb` 的兼容版本；目录没有 `requirements.txt`、环境锁文件或版本表。复现论文完整链路还需可用的 VASP、PAW 赝势、LAMMPS + DeePMD 接口、DP-GEN、CI-NEB/VTST 类工具、LOBSTER，以及论文提及的 PH-SA 位点生成方法。论文方法采用 400 eV 截断、2×2×1 k 点、15 Å 真空层及结构优化收敛阈值 0.05 eV/Å、10⁻⁵ eV；**具体作业应核对对应 `INCAR`，不能把某一个文件的参数套用于所有子任务**。例如 GC-DFT 文件含溶剂／电子数设置，而合金 AIMD 参数与 DP-GEN AIMD 示例不完全相同。
+以下命令在 **Linux 项目根目录**执行，各任务独立选择。新计算仍须先估算资源并取得许可；命令示例不代表已获运行许可。已完成结果及与原文的差异见 [复现尝试与资源检查.md](复现尝试与资源检查.md)。目前可运行的是单模型验证、PH-SA 位点生成、近似气相参考和 Cu(100) GCMC；DFT/NEB、合金 AIMD 和完整 DP-GEN 的输入及环境仍待补齐。
 
-**硬件与存储推断。** 当前静态文件总量约 **325 MB**（训练数据约 244 MB、验证约 31 MB、测试约 31 MB、模型约 17 MB，其他较小）；纯读取和统计数据，普通多核工作站、**16 GB RAM** 及数 GB 空余空间即可。对约 432 个 Cu 加吸附物的 GCMC，建议 **8–16 核 CPU、32 GB RAM**；GPU 不是算法必需，但兼容的 **12–24 GB 显存 GPU** 可改善深度势推理／训练吞吐，实际需求取决于 DeePMD 版本、批大小和并行方式。若按脚本默认每一步最多 **400 次** BFGS 优化并保存逐步轨迹，论文每晶面 15,000 次 MC 提案会产生大量文件与轨迹帧；规划**数十 GB 甚至更高**的可用磁盘空间较稳妥，具体值取决于收敛速度与输出频率。完整 DFT/AIMD/NEB 重算要显著更多资源；对多张 NEB 图像和大量标注结构，通常需要具备 VASP 许可的多核计算节点或集群、较大内存和较长队列时间，不能从现有静态文件可靠给出固定核时。
+### 5.1 环境、输入与通用运行方式
 
-**直接复现的障碍。** `gcmc.py` 末尾的 `mu_CO=`、`mu_H=`、`steps=` 留空，当前文件有 Python 语法错误；复现前必须根据论文补充材料确定化学势到电位／pH 的映射和步数。脚本在未传 `--dp_model` 时会把所有构型能量设成 **0**，虽能进入代码路径，却没有物理可用的势能；`n_H / 144` 的覆盖度分母写死为 Cu(100) 表面位点数，换晶面需要修改。脚本亦未固定随机种子，`adsorption_sites.json` 只对应当前 Cu(100) 结构。其接受准则使用局部弛豫后的能量差与化学势，代码中没有对不同插入／删除提案数、位点简并度等显式提案概率作修正；因此要复现论文**定量平衡覆盖度**，还需以补充方法核对接受率、化学势和采样实现。目录也没有四晶面完整 GCMC 轨迹、DP-GEN 训练配置及 DFT/NEB 原始能量输出。现有材料适合检查结构、重新使用标注数据与单个势模型，并作为重建计算流程的起点；不足以“一键复现”论文全部数值与图表。
+已有 `.venv` 时直接使用；新环境使用 Python 3.9。当前机器可按下列路径创建，其他机器将解释器路径替换为自己的 Python 3.9：
 
-> 报告依据：本地论文正文、代码及文件格式的静态阅读和文件／数组形状清点；**未启动 DFT、训练、分子动力学或 GCMC 计算**。论文中的科学数值属于作者报告结果，硬件与存储配置属于按模型和文件规模作出的估计。
+```bash
+/opt/miniconda3/envs/ace_gcn_39/bin/python -m venv .venv
+.venv/bin/python -m pip install -r reproduction/requirements.txt
+.venv/bin/python -m pip check
+```
+
+Git 仓库不含训练/验证/测试数据集。测试命令需先从 [论文 Zenodo 存档](https://zenodo.org/records/18375029) 获取并解压测试集，确认存在 `DP-GEN_test_data/test_data/*/set.000/coord.npy`。GCMC 使用随附 `DP-GEN_file/DP-GEN_file/model_4.pb`、`GCMC/GCMC/POSCAR` 和 `adsorption_sites.json`；PH-SA 使用 `reproduction/PH-SA_upstream/` 的固定版本源码。
+
+每次操作创建一个新目录，以下变量和函数在同一个 Bash 终端中有效：
+
+```bash
+mkdir -p reproduction/results
+export CU_RUN_DIR=$(mktemp -d reproduction/results/manual_XXXXXX)
+export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4
+export NUMEXPR_NUM_THREADS=4 TF_INTRA_OP_PARALLELISM_THREADS=4
+export TF_INTER_OP_PARALLELISM_THREADS=1 CUDA_VISIBLE_DEVICES=-1
+
+# 参数：日志名称、超时秒数、地址空间上限 GiB、Python 脚本及其参数。
+run_cpu() {
+  local cu_name="$1" cu_seconds="$2" cu_memory="$3"
+  shift 3
+  if [[ -e "$CU_RUN_DIR/$cu_name.log" || -e "$CU_RUN_DIR/$cu_name.resources.txt" ]]; then
+    echo "日志已存在，请更换名称或新建 CU_RUN_DIR。" >&2
+    return 1
+  fi
+  /usr/bin/time -v -o "$CU_RUN_DIR/$cu_name.resources.txt" \
+    timeout --signal=TERM --kill-after=30s "$cu_seconds" \
+    prlimit --as="$((cu_memory * 1024 * 1024 * 1024))" \
+    taskset -c 0-3 .venv/bin/python "$@" \
+    > "$CU_RUN_DIR/$cu_name.log" 2>&1
+}
+```
+
+`taskset` 要求 CPU 0–3 在当前任务允许范围内；受调度器分配时按实际 CPU 编号调整。`prlimit` 限制地址空间，包含虚拟映射，比单纯 RSS 预算更保守。输出目录总量需另行检查。函数前台执行，资源记录中的 `Exit status: 0` 表示成功，`124` 通常表示超时。需断开终端时可使用 `tmux`；函数不能直接作为 `nohup` 的可执行程序。
+
+### 5.2 交付模型测试集验证
+
+100 帧用于兼容性检查；9,893 帧用于复算论文报告误差。预算 4 CPU、8 GiB、无 GPU；分别预留 100 MiB/20 MiB 输出，超时 30/90 分钟。全测试此前实测约 13 分 35 秒，共享环境耗时会变化。
+
+```bash
+run_cpu test100 1800 8 reproduction/evaluate_model.py \
+  --model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --data DP-GEN_test_data/test_data --frames 100 --threads 4 \
+  --output "$CU_RUN_DIR/test100.json"
+```
+
+```bash
+run_cpu test_all 5400 8 reproduction/evaluate_model.py \
+  --model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --data DP-GEN_test_data/test_data --frames 9893 --threads 4 \
+  --output "$CU_RUN_DIR/test_all.json"
+```
+
+### 5.3 Cu(100) PH-SA 表面位点重建
+
+使用 `k=1.0`、H 半径和 CO 的 C 锚点，仅生成表面位点；已验证各 576 点及 CO 法向量与交付输入匹配。参数来自逆向分析，尚不能唯一证明作者实际调用方式。预算 4 CPU、16 GiB、无 GPU、100 MiB 输出，30 分钟超时；此前实测 50.14 秒。候选不会自动替换 GCMC 输入。
+
+```bash
+run_cpu phsa_surface 1800 16 reproduction/compare_phsa_sites.py \
+  --k 1.0 --co-anchor C --surface-only \
+  --output-dir "$CU_RUN_DIR/phsa_surface"
+```
+
+输出 `comparison.json`、`raw_sites.json`、`candidate_sites.json`。省略 `--surface-only` 会增加内部位点计算，需重新评估预算。
+
+### 5.4 MLIP 气相诊断与键长弛豫
+
+这是近似参考方案：`delta_H=delta_CO=0` 表示把气相减吸附态的热校正差设为零，不能当作作者数值或 DFT 验证。诊断共 34 个两原子单点；弛豫每种最多 50 次搜索加末态求值。每项预算 4 CPU、8 GiB、无 GPU、10 MiB 输出、15 分钟超时。
+
+```bash
+run_cpu gas_probe 900 8 reproduction/probe_gas_references.py \
+  --model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --delta-h 0 --delta-co 0 --u-rhe -1 \
+  --output "$CU_RUN_DIR/gas_probe.json"
+```
+
+仅在诊断成功、检查其筛查标记后执行弛豫；不能在前一步失败时继续：
+
+```bash
+run_cpu gas_refined 900 8 reproduction/refine_gas_references.py \
+  --probe "$CU_RUN_DIR/gas_probe.json" \
+  --output "$CU_RUN_DIR/gas_refined.json"
+```
+
+### 5.5 Cu(100) 近似 GCMC
+
+以下沿用已弛豫的 MLIP 气相能、零热校正及 −1 V RHE，取 `mu_H=−2.4292938222817155 eV`、`mu_CO=−14.28483274990397 eV`；**不是作者精确参数**。继续使用交付位点和随附接受规则，不自动修正补充公式中的体积/热波长因子。
+
+10 次提案流程测试（需 5.4 的 `gas_refined.json`，入口检查两种气体是否收敛）：预算 4 CPU、16 GiB、无 GPU、100 MiB 输出、30 分钟超时，每候选/初态最多 20 步 BFGS。
+
+```bash
+run_cpu gcmc_pilot 1800 16 reproduction/run_gcmc_pilot.py \
+  --reference "$CU_RUN_DIR/gas_refined.json" \
+  --output-dir "$CU_RUN_DIR/gcmc_pilot"
+```
+
+200 次提案独立短链：预算 4 CPU、16 GiB、无 GPU、2 GiB 输出，预计 60–150 分钟、180 分钟超时，每候选/初态最多 400 步 BFGS。两条已完成链实测约 65–84 分钟，均未达到采样收敛。
+
+```bash
+run_cpu gcmc200 10800 16 GCMC/GCMC/gcmc.py GCMC/GCMC/POSCAR \
+  --dp_model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --sites-file GCMC/GCMC/adsorption_sites.json \
+  --mu-h -2.4292938222817155 --mu-co -14.28483274990397 \
+  --steps 200 --temperature 300 --opt-steps 400 --seed 20261010 \
+  --output-dir "$CU_RUN_DIR/gcmc200"
+```
+
+独立种子对照可将 `--seed` 改为 `20261013`，同时更换日志名称及输出目录。新计算分别申请预算，不将相同接受率解释为覆盖度收敛。
+
+### 5.6 检查点续跑与一致性验证
+
+连续 4 次对比分段 2+2 次（总共 8 次提案、两次初态优化）：预算 4 CPU、16 GiB、无 GPU、100 MiB 输出、20 分钟超时，实测约 6 分 38 秒。
+
+```bash
+run_cpu resume_check 1200 16 reproduction/verify_gcmc_resume.py \
+  --output-root "$CU_RUN_DIR/resume_check"
+```
+
+已完成的 `gcmc200` 可在新的预算许可下续至总计 400 次。下面新增最多 200 次，示例超时 180 分钟、16 GiB 地址空间保护，输出预留 2 GiB；实际预算需结合当前覆盖度确认。`--steps 400` 是**总目标**，不是再做 400 次；输入、化学势、优化设置及种子须与原运行一致。只加载可信本地 `checkpoint.pkl`。跨终端时先将 `CU_RUN_DIR` 设为原运行目录。
+
+```bash
+run_cpu gcmc_resume400 10800 16 GCMC/GCMC/gcmc.py GCMC/GCMC/POSCAR \
+  --dp_model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --sites-file GCMC/GCMC/adsorption_sites.json \
+  --mu-h -2.4292938222817155 --mu-co -14.28483274990397 \
+  --steps 400 --temperature 300 --opt-steps 400 --seed 20261010 \
+  --resume --output-dir "$CU_RUN_DIR/gcmc200"
+```
+
+新脚本每个完成提案保存检查点；旧的 50 提案目录没有检查点，不能精确续跑。任意崩溃时刻可能造成日志/轨迹与检查点不一致，须核对后恢复，不能直接删除记录绕过检查。
+
+### 5.7 查看与分析已有结果
+
+以下只读取已有记录和结构，不产生新提案或势能计算：
+
+```bash
+tail -n 20 "$CU_RUN_DIR/gcmc200.log"
+cat "$CU_RUN_DIR/gcmc200.resources.txt"
+du -sh "$CU_RUN_DIR/gcmc200"
+
+.venv/bin/python reproduction/summarize_gcmc.py "$CU_RUN_DIR/gcmc200" \
+  --output "$CU_RUN_DIR/gcmc_summary.json"
+.venv/bin/python reproduction/analyze_gcmc_final.py "$CU_RUN_DIR/gcmc200" \
+  --output "$CU_RUN_DIR/gcmc_geometry.json"
+```
+
+对比项目内已完成的两条独立轨迹并生成图：
+
+```bash
+MPLCONFIGDIR=/tmp/cu_matplotlib_cache .venv/bin/python \
+  reproduction/compare_gcmc_seeds.py \
+  --first reproduction/results/gcmc_baseline200_mu0 \
+  --second reproduction/results/gcmc_seed20261013_mu0 \
+  --output-dir "$CU_RUN_DIR/seed_comparison"
+```
+
+结构分析的 Cu–Cu 截断 3.0 Å、GCN 分母 12、H 深度±0.2 Å 模糊带均为本次预设。总 H 数量不能当作 Hsub；这些统计不替代作者判据、采样收敛及 DFT 势垒验证。

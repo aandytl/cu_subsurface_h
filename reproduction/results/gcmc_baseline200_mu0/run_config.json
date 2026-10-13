@@ -1,0 +1,18 @@
+{
+  "input_file": "/home/LYT/projects/cu_surface_calc/GCMC/GCMC/POSCAR",
+  "dp_model": "/home/LYT/projects/cu_surface_calc/DP-GEN_file/DP-GEN_file/model_4.pb",
+  "sites_file": "/home/LYT/projects/cu_surface_calc/GCMC/GCMC/adsorption_sites.json",
+  "mu_co": -14.28483274990397,
+  "mu_h": -2.4292938222817155,
+  "steps": 200,
+  "temperature": 300.0,
+  "opt_steps": 400,
+  "seed": 20261010,
+  "output_dir": "reproduction/results/gcmc_baseline200_mu0",
+  "resume": false,
+  "input_sha256": {
+    "/home/LYT/projects/cu_surface_calc/GCMC/GCMC/POSCAR": "6b0803548f75b08819282b83a46dae18586a7778c74ef2cb7f93b3eb65648564",
+    "/home/LYT/projects/cu_surface_calc/DP-GEN_file/DP-GEN_file/model_4.pb": "b61a2f46dfd4f2807f3930536bf09c6c5d7d8d97616d77b6e9587e2d9b40aee3",
+    "/home/LYT/projects/cu_surface_calc/GCMC/GCMC/adsorption_sites.json": "ec230ea67449b71732384b2eddd9a35cad161f965b74dc8dbc63d14c909cc98a"
+  }
+}

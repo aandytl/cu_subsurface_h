@@ -10,3 +10,6 @@ __pycache__/
 *.traj
 **/trajectories/
 **/optimized_structures/
+*.pkl
+*.tmp
+**/.ipynb_checkpoints/

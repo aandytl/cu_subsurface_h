@@ -1,0 +1,4 @@
+{"step": 0, "operation": "add_H", "accepted": true, "delta_G": -1.145760462311364, "energy": -1512.65175613578, "current_energy_eV": -1512.65175613578, "n_CO": 0, "n_H": 1}
+{"step": 1, "operation": "add_H", "accepted": true, "delta_G": -0.7143450349295564, "energy": -1515.7953949929913, "current_energy_eV": -1515.7953949929913, "n_CO": 0, "n_H": 2}
+{"step": 2, "operation": "add_CO", "accepted": true, "delta_G": -1.004847119858752, "energy": -1531.085074862754, "current_energy_eV": -1531.085074862754, "n_CO": 1, "n_H": 2}
+{"step": 3, "operation": "move_H", "accepted": true, "delta_G": -0.4305390618851561, "energy": -1531.5156139246392, "current_energy_eV": -1531.5156139246392, "n_CO": 1, "n_H": 2}

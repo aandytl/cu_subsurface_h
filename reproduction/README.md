@@ -98,3 +98,53 @@ OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 NUMEXPR_NUM_THREADS=4
   --output-dir reproduction/results/gcmc_baseline50_mu0 \
   > reproduction/results/gcmc_baseline50.log 2>&1
 ```
+
+## 200 提案基线（已许可并完成）
+
+使用已有近似化学势和原位点。预算和限制见根目录运行记录。
+
+```bash
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 NUMEXPR_NUM_THREADS=4 TF_INTRA_OP_PARALLELISM_THREADS=4 TF_INTER_OP_PARALLELISM_THREADS=1 CUDA_VISIBLE_DEVICES=-1 \
+/usr/bin/time -v -o reproduction/results/gcmc_baseline200_resources.txt \
+  timeout --signal=TERM --kill-after=30s 10800s prlimit --as=17179869184 \
+  taskset -c 0-3 .venv/bin/python GCMC/GCMC/gcmc.py GCMC/GCMC/POSCAR \
+  --dp_model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --sites-file GCMC/GCMC/adsorption_sites.json \
+  --mu-h -2.4292938222817155 --mu-co -14.28483274990397 \
+  --steps 200 --temperature 300 --opt-steps 400 --seed 20261010 \
+  --output-dir reproduction/results/gcmc_baseline200_mu0 \
+  > reproduction/results/gcmc_baseline200.log 2>&1
+```
+
+新运行每个完成提案写检查点。续跑需要相同输入/设置与 --resume，--steps 为总目标数；新增计算仍须报告预算并取得许可。
+
+## 独立种子 200 提案（已许可并完成）
+
+仍用原初态/位点和既有近似化学势，仅改变随机种子为本次预设 20261013。独立输出目录，不续跑上一条链。预算 4 CPU、16 GiB、无 GPU、输出预留 2 GiB，预计 60–150 分钟、180 分钟超时。
+
+```bash
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 NUMEXPR_NUM_THREADS=4 TF_INTRA_OP_PARALLELISM_THREADS=4 TF_INTER_OP_PARALLELISM_THREADS=1 CUDA_VISIBLE_DEVICES=-1 \
+/usr/bin/time -v -o reproduction/results/gcmc_seed20261013_resources.txt \
+  timeout --signal=TERM --kill-after=30s 10800s prlimit --as=17179869184 \
+  taskset -c 0-3 .venv/bin/python GCMC/GCMC/gcmc.py GCMC/GCMC/POSCAR \
+  --dp_model DP-GEN_file/DP-GEN_file/model_4.pb \
+  --sites-file GCMC/GCMC/adsorption_sites.json \
+  --mu-h -2.4292938222817155 --mu-co -14.28483274990397 \
+  --steps 200 --temperature 300 --opt-steps 400 --seed 20261013 \
+  --output-dir reproduction/results/gcmc_seed20261013_mu0 \
+  > reproduction/results/gcmc_seed20261013.log 2>&1
+```
+
+## PH-SA 表面位点高度假设（用户自行运行并验证通过）
+
+下列 k=1.0、C 锚点来自已有位点高度的逆向分析，不是作者输入凭证。仅表面位点；预算见根目录记录。
+
+```bash
+/usr/bin/time -v -o reproduction/results/phsa_height_verified_resources.txt \
+  timeout --signal=TERM --kill-after=30s 1800s \
+  prlimit --as=17179869184 --fsize=104857600 taskset -c 0-3 \
+  .venv/bin/python reproduction/compare_phsa_sites.py \
+  --k 1.0 --co-anchor C --surface-only \
+  --output-dir reproduction/results/phsa_height_verified \
+  > reproduction/results/phsa_height_verified.log 2>&1
+```

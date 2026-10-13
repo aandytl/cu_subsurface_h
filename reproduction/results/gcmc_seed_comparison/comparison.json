@@ -1,0 +1,131 @@
+{
+  "scope": "Same input/model/approximate mu; different random seeds. Early-chain diagnostics, not equilibrium estimates.",
+  "trajectories": [
+    {
+      "seed": 20261010,
+      "proposals": 200,
+      "accepted": 115,
+      "final_n_CO": 39,
+      "final_n_H": 31,
+      "blocks": [
+        {
+          "start_step": 0,
+          "count": 50,
+          "mean_n_CO": 4.58,
+          "mean_n_H": 6.62,
+          "accepted": 32
+        },
+        {
+          "start_step": 50,
+          "count": 50,
+          "mean_n_CO": 14.56,
+          "mean_n_H": 14.28,
+          "accepted": 26
+        },
+        {
+          "start_step": 100,
+          "count": 50,
+          "mean_n_CO": 25.84,
+          "mean_n_H": 18.34,
+          "accepted": 26
+        },
+        {
+          "start_step": 150,
+          "count": 50,
+          "mean_n_CO": 35.18,
+          "mean_n_H": 27.18,
+          "accepted": 31
+        }
+      ],
+      "operations": {
+        "add_CO": {
+          "proposals": 39,
+          "accepted": 39
+        },
+        "add_H": {
+          "proposals": 31,
+          "accepted": 31
+        },
+        "move_CO": {
+          "proposals": 38,
+          "accepted": 29
+        },
+        "move_H": {
+          "proposals": 30,
+          "accepted": 16
+        },
+        "remove_CO": {
+          "proposals": 28,
+          "accepted": 0
+        },
+        "remove_H": {
+          "proposals": 34,
+          "accepted": 0
+        }
+      }
+    },
+    {
+      "seed": 20261013,
+      "proposals": 200,
+      "accepted": 115,
+      "final_n_CO": 23,
+      "final_n_H": 42,
+      "blocks": [
+        {
+          "start_step": 0,
+          "count": 50,
+          "mean_n_CO": 1.4,
+          "mean_n_H": 5.0,
+          "accepted": 22
+        },
+        {
+          "start_step": 50,
+          "count": 50,
+          "mean_n_CO": 5.74,
+          "mean_n_H": 14.76,
+          "accepted": 29
+        },
+        {
+          "start_step": 100,
+          "count": 50,
+          "mean_n_CO": 13.36,
+          "mean_n_H": 24.04,
+          "accepted": 30
+        },
+        {
+          "start_step": 150,
+          "count": 50,
+          "mean_n_CO": 20.3,
+          "mean_n_H": 34.42,
+          "accepted": 34
+        }
+      ],
+      "operations": {
+        "add_CO": {
+          "proposals": 23,
+          "accepted": 23
+        },
+        "add_H": {
+          "proposals": 42,
+          "accepted": 42
+        },
+        "move_CO": {
+          "proposals": 35,
+          "accepted": 25
+        },
+        "move_H": {
+          "proposals": 40,
+          "accepted": 25
+        },
+        "remove_CO": {
+          "proposals": 25,
+          "accepted": 0
+        },
+        "remove_H": {
+          "proposals": 35,
+          "accepted": 0
+        }
+      }
+    }
+  ]
+}

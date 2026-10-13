@@ -1,0 +1,71 @@
+{
+  "proposals": 200,
+  "accepted": 115,
+  "operations": {
+    "add_H": 31,
+    "add_CO": 39,
+    "move_H": 30,
+    "move_CO": 38,
+    "remove_H": 34,
+    "remove_CO": 28
+  },
+  "optimizations": 201,
+  "converged": 201,
+  "nonconverged_steps": [],
+  "total_bfgs_steps": 6753,
+  "longest_bfgs": 150,
+  "over20": 100,
+  "max_final_force_eV_per_A": 0.04993014407821279,
+  "final": {
+    "step": 199,
+    "operation": "add_H",
+    "accepted": true,
+    "delta_G": -0.8189271558247584,
+    "energy": -2223.6248086543533,
+    "current_energy_eV": -2223.6248086543533,
+    "n_CO": 39,
+    "n_H": 31
+  },
+  "output_file_bytes": 178158944,
+  "blocks": [
+    {
+      "start_step": 0,
+      "count": 50,
+      "accepted": 32,
+      "mean_n_CO": 4.58,
+      "mean_n_H": 6.62,
+      "mean_energy_eV": -1603.9692885957595
+    },
+    {
+      "start_step": 50,
+      "count": 50,
+      "accepted": 26,
+      "mean_n_CO": 14.56,
+      "mean_n_H": 14.28,
+      "mean_energy_eV": -1786.4254220274377
+    },
+    {
+      "start_step": 100,
+      "count": 50,
+      "accepted": 26,
+      "mean_n_CO": 25.84,
+      "mean_n_H": 18.34,
+      "mean_energy_eV": -1975.3148184883776
+    },
+    {
+      "start_step": 150,
+      "count": 50,
+      "accepted": 31,
+      "mean_n_CO": 35.18,
+      "mean_n_H": 27.18,
+      "mean_energy_eV": -2151.3640577409187
+    }
+  ],
+  "limitation": "Block means are diagnostics, not proof of convergence. Approximate gas chemical potentials and supplied acceptance rule.",
+  "exit_code": 0,
+  "wall_seconds": 5043,
+  "max_rss_KiB": 1172864,
+  "checkpoint_next_step": 200,
+  "checkpoint_energy_equal": true,
+  "first50_equal": true
+}

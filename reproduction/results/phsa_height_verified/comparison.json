@@ -1,0 +1,84 @@
+{
+  "parameters": {
+    "mul": 0.8,
+    "tol": 0.6,
+    "k": 1.0,
+    "radius": 5.0,
+    "surface_coordination": 12,
+    "both_surface": false
+  },
+  "adsorbents": {
+    "H": [
+      "H"
+    ],
+    "CO": [
+      "C"
+    ]
+  },
+  "surface_only": true,
+  "source": {
+    "repository": "https://github.com/JFLigroup/PH-SA",
+    "commit": "1a1f5f4bb183528703e271a5652ad46b92509f7f",
+    "files": [
+      "LICENSE",
+      "README.md",
+      "PH-SA/phsa/__init__.py",
+      "PH-SA/phsa/adsorption_sites.py",
+      "PH-SA/phsa/utils.py",
+      "PH-SA/workflow_slab.ipynb",
+      "PH-SA/workflow_cluster.ipynb",
+      "PH-SA/examples/input.json",
+      "PH-SA/examples/octahedron.vasp",
+      "PH-SA/basinhopping.py"
+    ],
+    "excluded": "OC_10M.pb and compiled caches"
+  },
+  "counts": {
+    "H_surface": 576,
+    "H_inside": 0,
+    "CO_surface": 576
+  },
+  "comparison": {
+    "H": {
+      "original_to_generated": {
+        "count": 576,
+        "within_0.1_A": 576,
+        "within_0.0001_A": 576,
+        "median_nearest_A": 0.0,
+        "max_nearest_A": 6.28539212249071e-14
+      },
+      "generated_to_original": {
+        "count": 576,
+        "within_0.1_A": 576,
+        "within_0.0001_A": 576,
+        "median_nearest_A": 0.0,
+        "max_nearest_A": 6.28539212249071e-14
+      }
+    },
+    "CO": {
+      "original_to_generated": {
+        "count": 576,
+        "within_0.1_A": 576,
+        "within_0.0001_A": 576,
+        "median_nearest_A": 0.0,
+        "max_nearest_A": 1.0061144634581109e-13
+      },
+      "generated_to_original": {
+        "count": 576,
+        "within_0.1_A": 576,
+        "within_0.0001_A": 576,
+        "median_nearest_A": 0.0,
+        "max_nearest_A": 1.0061144634581109e-13
+      },
+      "min_matched_normal_dot": 1.0
+    }
+  },
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "limitations": "Upstream defaults, not author settings. Candidates not approved for GCMC. No DFT or MLIP evaluation.",
+  "elapsed_seconds": 38.06278681382537
+}

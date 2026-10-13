@@ -1,0 +1,40 @@
+2026-10-12 19:34:35.458006: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+DeePMD-kit: Successfully load libcudart.so.12
+2026-10-12 19:34:38.234936: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+WARNING:tensorflow:From /home/LYT/projects/cu_surface_calc/.venv/lib/python3.9/site-packages/deepmd/utils/batch_size.py:28: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices('GPU')` instead.
+You can use the environment variable DP_INFER_BATCH_SIZE tocontrol the inference batch size (nframes * natoms). The default value is 1024.
+      Step     Time          Energy          fmax
+BFGS:    0 19:34:40    -1530.699551        8.205948
+BFGS:    1 19:34:40    -1530.516461        5.724815
+BFGS:    2 19:34:41    -1530.926121        3.065769
+BFGS:    3 19:34:42    -1530.927580        4.291454
+BFGS:    4 19:34:43    -1531.010112        0.774266
+BFGS:    5 19:34:44    -1531.018180        0.401431
+BFGS:    6 19:34:44    -1531.035645        0.836758
+BFGS:    7 19:34:45    -1531.044361        0.721214
+BFGS:    8 19:34:45    -1531.052768        0.263874
+BFGS:    9 19:34:46    -1531.058877        0.279680
+BFGS:   10 19:34:47    -1531.069632        0.558476
+BFGS:   11 19:34:47    -1531.078844        0.552003
+BFGS:   12 19:34:48    -1531.083729        0.271398
+BFGS:   13 19:34:48    -1531.085075        0.039029
+      Step     Time          Energy          fmax
+BFGS:    0 19:34:49    -1531.490934        0.284052
+BFGS:    1 19:34:50    -1531.495149        0.241066
+BFGS:    2 19:34:51    -1531.508739        0.244292
+BFGS:    3 19:34:51    -1531.509575        0.245059
+BFGS:    4 19:34:52    -1531.510658        0.111960
+BFGS:    5 19:34:52    -1531.513186        0.123672
+BFGS:    6 19:34:53    -1531.513888        0.098300
+BFGS:    7 19:34:54    -1531.514331        0.055046
+BFGS:    8 19:34:54    -1531.514746        0.064084
+BFGS:    9 19:34:55    -1531.515197        0.095802
+BFGS:   10 19:34:55    -1531.515466        0.062849
+BFGS:   11 19:34:56    -1531.515614        0.021833
+Overall Acceptance Rate: 100.0%

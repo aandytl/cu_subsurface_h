@@ -1,0 +1,79 @@
+{
+  "parameters": {
+    "mul": 0.8,
+    "tol": 0.6,
+    "k": 1.1,
+    "radius": 5.0,
+    "surface_coordination": 12,
+    "both_surface": false
+  },
+  "adsorbents": {
+    "H": [
+      "H"
+    ],
+    "CO": [
+      "C",
+      "O"
+    ]
+  },
+  "source": {
+    "repository": "https://github.com/JFLigroup/PH-SA",
+    "commit": "1a1f5f4bb183528703e271a5652ad46b92509f7f",
+    "files": [
+      "LICENSE",
+      "README.md",
+      "PH-SA/phsa/__init__.py",
+      "PH-SA/phsa/adsorption_sites.py",
+      "PH-SA/phsa/utils.py",
+      "PH-SA/workflow_slab.ipynb",
+      "PH-SA/workflow_cluster.ipynb",
+      "PH-SA/examples/input.json",
+      "PH-SA/examples/octahedron.vasp",
+      "PH-SA/basinhopping.py"
+    ],
+    "excluded": "OC_10M.pb and compiled caches"
+  },
+  "counts": {
+    "H_surface": 576,
+    "H_inside": 3792,
+    "CO_surface": 576
+  },
+  "comparison": {
+    "H": {
+      "original_to_generated": {
+        "count": 576,
+        "within_0.1_A": 144,
+        "median_nearest_A": 0.20442398767274828,
+        "max_nearest_A": 0.24588601385232248
+      },
+      "generated_to_original": {
+        "count": 4368,
+        "within_0.1_A": 144,
+        "median_nearest_A": 2.387996121855193,
+        "max_nearest_A": 3.714979557141123
+      }
+    },
+    "CO": {
+      "original_to_generated": {
+        "count": 576,
+        "within_0.1_A": 144,
+        "median_nearest_A": 0.1225575878991898,
+        "max_nearest_A": 0.18591937920333468
+      },
+      "generated_to_original": {
+        "count": 576,
+        "within_0.1_A": 144,
+        "median_nearest_A": 0.1225575878991898,
+        "max_nearest_A": 0.18591937920333468
+      }
+    }
+  },
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "limitations": "Upstream defaults, not author settings. Candidates not approved for GCMC. No DFT or MLIP evaluation.",
+  "elapsed_seconds": 1179.4320087479427
+}

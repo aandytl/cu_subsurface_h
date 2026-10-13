@@ -8,6 +8,8 @@ import json
 import sys
 import os
 import argparse
+import pickle
+import hashlib
 from pathlib import Path
 from typing import List, Tuple, Optional, Dict
 from itertools import combinations
@@ -250,7 +252,8 @@ class GCMC_Simulator:
                  opt_params: Optional[dict] = None,
                  max_H_coverage: float = 1.25,
                  move_search_radius: float = 3.0,
-                 move_max_candidates: int = 8):
+                 move_max_candidates: int = 8,
+                 resume_state: Optional[dict] = None):
 
         self.original = atoms.copy()
         self.atoms = atoms.copy()
@@ -277,10 +280,16 @@ class GCMC_Simulator:
             os.makedirs("trajectories", exist_ok=True)
             os.makedirs("optimized_structures", exist_ok=True)
 
-        optimized_atoms, energy = self._calculate_energy(self.atoms, -1)
-        self.atoms = optimized_atoms
-        self.energy = energy
-        self.main_traj = Trajectory("gcmc_main.traj", 'w')
+        self.start_step = 0
+        if resume_state is None:
+            self.atoms, self.energy = self._calculate_energy(self.atoms, -1)
+        else:
+            self.atoms = resume_state['atoms']
+            self.energy = resume_state['energy']
+            self.start_step = resume_state['next_step']
+            random.setstate(resume_state['random_state'])
+            np.random.set_state(resume_state['numpy_state'])
+        self.main_traj = Trajectory("gcmc_main.traj", 'a' if resume_state else 'w')
 
     def _calculate_energy(self, atoms: Atoms, step: int) -> tuple[Atoms, float]:
         if not self.use_dp:
@@ -380,9 +389,25 @@ class GCMC_Simulator:
             'energy': new_energy
         }
 
+    def save_checkpoint(self, next_step):
+        atoms = self.atoms.copy()
+        atoms.calc = None
+        state = {'atoms': atoms, 'energy': self.energy, 'next_step': next_step,
+                 'random_state': random.getstate(), 'numpy_state': np.random.get_state()}
+        with open('checkpoint.tmp', 'wb') as f:
+            pickle.dump(state, f)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace('checkpoint.tmp', 'checkpoint.pkl')
+
     def run(self) -> List[Dict]:
         results = []
-        for step in range(self.steps):
+        if self.start_step:
+            with open('mc_steps.jsonl') as f:
+                results = [json.loads(line) for line in f]
+            if len(results) != self.start_step:
+                raise ValueError('Checkpoint/log mismatch; inspect interrupted files before resuming')
+        for step in range(self.start_step, self.steps):
             result = self.run_step(step)
             result.update({'current_energy_eV': self.energy,
                            'n_CO': sum(a.symbol == 'C' for a in self.atoms),
@@ -391,6 +416,7 @@ class GCMC_Simulator:
                 f.write(json.dumps(result) + '\n')
             results.append(result)
             write("CONTCAR", sort_atoms(self.atoms))
+            self.save_checkpoint(step + 1)
             if step % 10 == 0:
                 print(f"Step {step}/{self.steps}: {result}")
         return results
@@ -408,6 +434,7 @@ if __name__ == "__main__":
     parser.add_argument("--opt-steps", type=int, default=400)
     parser.add_argument("--seed", type=int, default=20261010)
     parser.add_argument("--output-dir", required=True, type=Path)
+    parser.add_argument("--resume", action="store_true", help="Resume trusted local checkpoint; steps is total target")
     args = parser.parse_args()
     if args.steps <= 0 or args.opt_steps <= 0 or args.temperature <= 0:
         parser.error("steps, opt-steps and temperature must be positive")
@@ -415,14 +442,31 @@ if __name__ == "__main__":
         parser.error("chemical potentials and temperature must be finite")
     input_file, dp_model, sites_file = [str(p.resolve(strict=True)) for p in
                                         [args.input_file, args.dp_model, args.sites_file]]
-    args.output_dir.mkdir(parents=True, exist_ok=False)
+    config = {**vars(args), "input_file": input_file, "dp_model": dp_model, "sites_file": sites_file}
+    config['input_sha256'] = {path: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                              for path in [input_file, dp_model, sites_file]}
+    resume_state = None
+    if args.resume:
+        previous = json.loads((args.output_dir / 'run_config.json').read_text())
+        for key in ['mu_co', 'mu_h', 'temperature', 'opt_steps', 'seed', 'input_sha256']:
+            if previous.get(key) != config[key]:
+                parser.error('Resume configuration mismatch: ' + key)
+        # Only load checkpoints created locally by this script, never untrusted downloads.
+        with (args.output_dir / 'checkpoint.pkl').open('rb') as f:
+            resume_state = pickle.load(f)
+        if args.steps <= resume_state['next_step']:
+            parser.error('steps must exceed completed checkpoint steps')
+        lines = (args.output_dir / 'mc_steps.jsonl').read_text().splitlines()
+        if len(lines) != resume_state['next_step']:
+            parser.error('Checkpoint/log mismatch; resume refused')
+    else:
+        args.output_dir.mkdir(parents=True, exist_ok=False)
     random.seed(args.seed)
     np.random.seed(args.seed)
     base_atoms = read(input_file)
     os.chdir(args.output_dir)
     with open("run_config.json", "w") as f:
-        json.dump({**vars(args), "input_file": input_file, "dp_model": dp_model,
-                   "sites_file": sites_file}, f, default=str, indent=2)
+        json.dump(config, f, default=str, indent=2)
 
     simulator = GCMC_Simulator(
         atoms=base_atoms,
@@ -435,7 +479,8 @@ if __name__ == "__main__":
         max_H_coverage=1,
         move_search_radius=3.0,
         move_max_candidates=100,
-        opt_params={'opt_steps': args.opt_steps, 'fmax': 0.05}
+        opt_params={'opt_steps': args.opt_steps, 'fmax': 0.05},
+        resume_state=resume_state
     )
 
     results = simulator.run()
